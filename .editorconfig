@@ -1,0 +1,29 @@
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Set default charset
+[*.js]
+charset = utf-8
+
+# Scripts and assets
+[*.{html,js,css}]
+indent_style = tab
+tab_width = 4
+
+[*.sass]
+indent_style = tab
+indent_size = 4
+
+# Configuration
+[webpack.config.js, package.json, eslintrc, prettierrc]
+indent_style = tab
+tab_width = 2
+
+[*.html]
+insert_final_newline = true
+trim_trailing_whitespace = false

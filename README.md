@@ -72,7 +72,7 @@ In order to get some benefit from this project, I'm practicing [Markdown](https:
 ##### I just needed some content to put in this readme
 
 ```javascript
-console.log('It's alive!');
+console.log('It\'s alive!');
 ```
 
 ###### Tux says Hello
