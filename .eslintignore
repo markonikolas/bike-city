@@ -1,0 +1,6 @@
+/public/**
+/dist/**
+/build/**
+/docs/**
+/tmp/**
+/node_modules/**

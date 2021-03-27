@@ -1,0 +1,15 @@
+html
+	box-sizing: border-box
+
+*,
+*::before,
+*::after
+	box-sizing: inherit
+
+a
+	color: $brand-color
+	text-decoration: none
+
+	+on-event
+		color: $text-color
+		text-decoration: underline

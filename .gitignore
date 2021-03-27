@@ -1,0 +1,16 @@
+# Build ignores
+/dist
+/public
+/build
+
+# Sass and css maps
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# Packages
+/node_modules
+
+# MacOS
+.DS_Store

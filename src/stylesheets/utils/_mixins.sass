@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+=on-event($self: false)
+	@if $self
+		&,
+		&:hover,
+		&:active,
+		&:focus
+			@content
+	@else
+		&:hover,
+		&:active,
+		&:focus
+			@content
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+=when-inside($context)
+	#{$context} &
+		@content
+
+// Custom mixins
+// 
+@mixin fonts($font_weights, $ext, $italics: false)
+	@each $label, $weight in $font-weights
+		@font-face
+			font-family: "#{$font-name}"
+			src: url("#{$assets-url}/fonts/#{$font-name}-#{$label}.#{$ext}")
+			font-weight: $weight
+
+			@if $italics
+				font-style: italic
+
+// $columns params: number, auto-fit, auto-fill
+@mixin grid-columns($columns, $min, $max, $minmax, $auto)
+	@if $auto
+		grid-auto-columns: repeatRC($columns, $min, $max, $minmax)
+	@else
+		grid-template-columns: repeatRC($columns, $min, $max, $minmax)
+
+// if $auto is true, grid-auto-rows instead of grid-rows
+@mixin grid-rows($rows, $min, $max, $minmax, $auto)
+	@if $auto
+		grid-auto-rows: repeatRC($rows, $min, $max, $minmax)
+	@else
+		grid-template-rows: repeatRC($rows, $min, $max, $minmax)
