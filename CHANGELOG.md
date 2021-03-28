@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update page styles
 - Add placeholders to stylesheets
 - Update base styles
 - Modify base styles and varialbes

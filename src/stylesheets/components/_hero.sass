@@ -1,0 +1,54 @@
+.hero
+	@extend %body-padding
+	height: calc(100vh - #{$header-height})
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+	font-family: "Cabin", sans-serif
+	background: linear-gradient(105.9deg, #F3E24B 29.76%, rgba(255, 255, 255, 0) 101.82%), url('/src/assets/images/hero.jpg')
+
+	background-size: 135vh
+	background-repeat: no-repeat
+
+	// clip-path: polygon(0 0, 100% 0%, 100% 84%, 0 88%)
+
+	&__title
+		font-size: 60px
+		margin-top: 20px
+		margin-bottom: auto
+		line-height: 1.5ch
+		color: $brand-dark
+
+	&__clip-path
+		display: flex
+		justify-content: center
+		align-self: center
+		padding: 12px 12px 24px
+		background: #FFF
+		width: 100%
+		position: absolute
+		bottom: 0
+		clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0 100%)
+		&::before,
+		&::after
+			display: block
+			content: ''
+			width: 10px
+			height: 3px
+			position: absolute
+			background: $brand-dark
+			border-radius: 5px
+			bottom: 13px
+
+		&::before
+			left: 50%
+			transform: rotate(-45deg) translate(-2px, -2px)
+
+		&::after
+			right: 50%
+			transform: rotate(45deg) translate(2px, -2px)
+
+	&__explore
+		color: $brand-dark
+		position: relative
