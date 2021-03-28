@@ -2,6 +2,8 @@
 
 // Styles
 import './stylesheets/main.sass';
+
+// Scripts
 import './scripts';
 
 // Only files accepted here will be hot reloaded.
