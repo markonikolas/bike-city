@@ -1,17 +1,25 @@
 {
-    "extends": ["eslint:recommended", "airbnb-base"],
+    "extends": [
+        "eslint:recommended",
+        "airbnb-base"
+    ],
     "env": {
         "es6": true,
         "node": true,
         "browser": true
     },
-
     "rules": {
-        "indent": ["error", "tab"],
+        "indent": [
+            "error",
+            "tab"
+        ],
         "no-mixed-spaces-and-tabs": 2,
         "no-tabs": 0,
         "global-require": 0,
-        "semi": ["error", "always"],
+        "semi": [
+            "error",
+            "always"
+        ],
         "comma-dangle": [
             "error",
             {
@@ -21,22 +29,53 @@
         "quotes": [
             "error",
             "single",
-            { "allowTemplateLiterals": true, "avoidEscape": true }
+            {
+                "allowTemplateLiterals": true,
+                "avoidEscape": true
+            }
         ],
-        "space-in-parens": ["error", "always", { "exceptions": ["empty"] }],
-        "arrow-parens": ["error", "as-needed"],
-        "array-bracket-spacing": ["error", "always"],
-        "no-extra-parens": ["error", "all"],
-        "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+        "space-in-parens": [
+            "error",
+            "always",
+            {
+                "exceptions": [
+                    "empty"
+                ]
+            }
+        ],
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "array-bracket-spacing": [
+            "error",
+            "always"
+        ],
+        "no-extra-parens": [
+            "error",
+            "all"
+        ],
+        "no-underscore-dangle": [
+            "error",
+            {
+                "allowAfterThis": true
+            }
+        ],
         // Best Practices
         "accessor-pairs": [
             "warn",
-            { "getWithoutSet": true, "setWithoutGet": true }
+            {
+                "getWithoutSet": true,
+                "setWithoutGet": true
+            }
         ]
     },
-
+    "parser": "babel-eslint",
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
     }
 }

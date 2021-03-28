@@ -1,6 +1,6 @@
 {
     "name": "starter",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "Template repository for js and sass projects",
     "main": "index.js",
     "scripts": {
@@ -31,13 +31,14 @@
         "@babel/core": "^7.12.17",
         "@babel/preset-env": "^7.12.17",
         "autoprefixer": "^10.2.4",
+        "babel-eslint": "^6.1.2",
         "babel-loader": "^8.2.2",
         "browser-sync": "^2.26.14",
         "browser-sync-webpack-plugin": "^2.3.0",
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^5.0.2",
         "css-minimizer-webpack-plugin": "^1.2.0",
-        "eslint": "^7.20.0",
+        "eslint": "^3.19.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-import": "^2.22.1",
         "file-loader": "^6.2.0",

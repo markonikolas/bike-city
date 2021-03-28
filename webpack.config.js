@@ -43,8 +43,8 @@ module.exports = env => {
 	const entry = path.resolve( __dirname, APP_DIR, ENTRY_FILENAME );
 	const output = {
 		path: path.resolve( __dirname, BUILD_DIR ),
-		filename: inDevMode.check( '[name].js', '[contenthash].js' ),
-		chunkFilename: inDevMode.check( '[name]', '[contenthash].js' ),
+		filename: inDevMode.check( 'static/scripts/[name].js', 'static/scripts/[contenthash].js' ),
+		chunkFilename: inDevMode.check( 'static/scripts/[name]', 'static/scripts/[contenthash].js' ),
 		publicPath: ''
 	};
 	const devServer = {
@@ -138,7 +138,7 @@ module.exports = env => {
 
 	// Loader Rules
 	const styleRules = {
-		test: /\.s?[ac]ss$/i,
+		test: /\.s?[ac]ss$/gi,
 		use: [
 			inWatchMode.check(
 				'style-loader',
@@ -153,18 +153,32 @@ module.exports = env => {
 
 	const optimization = inWatchMode.check( { minimize: false }, optimizationOptions );
 
+	const templatesCommon = {
+		showErrors: isDev,
+		minify: !isDev,
+		favicon: `${APP_DIR}/assets/images/favicon.png`,
+		scriptLoading: 'defer',
+		cache: true,
+		publicPath: '../'
+	};
+
 	const plugins = [
 		new CleanWebpackPlugin( {
 			verbose: true
 		} ),
 		new HTMLWebpackPlugin( {
-			template: 'src/template.html',
-			filename: 'index.html',
-			showErrors: isDev,
-			minify: !isDev,
-			favicon: `${APP_DIR}/assets/images/favicon.png`,
-			scriptLoading: 'defer',
-			cache: true
+			template: 'src/templates/en-template.html',
+			filename: 'en/index.html',
+			...templatesCommon
+		} ),
+		new HTMLWebpackPlugin( {
+			template: 'src/templates/sr-template.html',
+			filename: 'sr/index.html',
+			...templatesCommon
+		} ),
+		new HTMLWebpackPlugin( {
+			template: 'src/templates/select-template.html',
+			filename: 'index.html'
 		} ),
 		new MiniCssExtractPlugin( {
 			filename: `${BUILD_ASSETS_DIR}/styles/${assetFilename}.css`
@@ -177,7 +191,7 @@ module.exports = env => {
 				proxy: 'http://localhost:8080/',
 
 				files: [
-					'**/template.html', // reload on html change
+					'**/*-template.html', // reload on html change
 					{
 						match: '**/*.js',
 						options: {
