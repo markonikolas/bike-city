@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Modified base styles and varialbes
 - Remove unnecessary stylesheets
 
 ## [1.1.0] - 2021-03-28
