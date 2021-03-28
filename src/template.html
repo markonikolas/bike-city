@@ -9,10 +9,12 @@
 	</head>
 
 	<body>
-		<header class="main-header">
-			<a href="/" class="logo">Bike <span class="logo--em">City</span></a>
-			<div class="menu"></div>
-			<nav class="main-nav">
+		<header class="header">
+			<a href="/" class="logo">Bike<span class="logo--em">City</span></a>
+			<div class="menu header__menu">
+				<span class="menu__line"></span>
+			</div>
+			<nav class="nav header__nav">
 				<a href="/">Home</a>
 				<a href="#shop">Shop</a>
 				<a href="/blog">Blog</a>
@@ -22,8 +24,11 @@
 		</header>
 
 		<article class="hero">
-			<h1>Easy way to find your dream ride.</h1>
-			<a href="#shop" class="explore">explore</a>
+			<h1 class="hero__title">Easy way to find your dream ride.</h1>
+			<div class="hero__clip-path">
+				<a href="#shop" class="hero__explore link link--dark">explore</a>
+			</div>
+
 		</article>
 
 		<article id="shop" class="article shop">
@@ -37,6 +42,14 @@
 		<article id="contact" class="article contact">
 			<h2 class="article__title">Contact</h2>
 		</article>
+		<footer class="footer">
+			<p class="footer__legal">&copy;
+				<script>document.write(new Date().getFullYear())</script>
+				<span class="logo logo--small">Bike<span class="logo--em">City</span></span> / All rights reserved.
+			</p>
+			<p class="footer__developer">Developed by <a href="https://github.com/markonikolas" class="link" target="blank" rel="noreferer">n1c01ash</a>
+			</p>
+		</footer>
 	</body>
 
 </html>

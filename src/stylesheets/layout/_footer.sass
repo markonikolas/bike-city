@@ -1,3 +1,20 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+.footer
+	@extend %body-padding
+	background: darken($mid-grey, 40%)
+	color: #FFF
+	padding-top: 20px
+	padding-bottom: 20px
+
+	&__legal
+		font-size: 15px
+		line-height: 1
+		margin: 0
+		letter-spacing: 0.2px
+
+	&__developer
+		font-size: 13px
+		margin: 0
