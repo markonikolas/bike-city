@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update base styles
 - Modified base styles and varialbes
 - Remove unnecessary stylesheets
 
