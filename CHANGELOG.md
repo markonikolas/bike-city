@@ -1,8 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.3.0] - 2021-03-28
+## [Unreleased]
 ### Changed
+- Update Changelog
 - Add new bike image
 - Modify footer typography
 - Add locale styles directly from sass
@@ -11,6 +12,9 @@ All notable changes to this project will be documented in this file.
 - Modify main template
 - Modify bundler config
 - Add babel
+
+## [1.3.0] - 2021-03-28
+### Changed
 - Modify webpack.config.js for multiple locales
 - Add locale templates
 
