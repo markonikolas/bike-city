@@ -74,6 +74,7 @@
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module",
+        "allowImportExportEverywhere": true,
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true
         }

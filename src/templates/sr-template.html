@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 
 	<head>
 		<meta charset="UTF-8" />
@@ -11,7 +11,7 @@
 	<body>
 		<header class="header">
 			<a href="/" class="logo">Bike<span class="logo--em">Grad</span></a>
-			<div class="menu header__menu">
+			<div id="menu" class="menu header__menu">
 				<span class="menu__line"></span>
 			</div>
 			<nav class="nav header__nav">
@@ -24,12 +24,11 @@
 		</header>
 
 		<article class="hero">
-			<h1 class="hero__title">Najlakši način da pronadjete bicikl iz snova.
+			<h1 class="hero__title">Najlakši način da nadjete bicikl iz snova.
 			</h1>
 			<div class="hero__clip-path">
-				<a href="#shop" class="hero__explore link link--dark">istraži</a>
+				<a href="#shop" class="hero__explore link link--dark">Istraži</a>
 			</div>
-
 		</article>
 
 		<article id="shop" class="article shop">
@@ -44,11 +43,14 @@
 			<h2 class="article__title">Kontakt</h2>
 		</article>
 		<footer class="footer">
-			<p class="footer__legal">&copy;
-				<script>document.write(new Date().getFullYear())</script>
-				<span class="logo logo--small">Bike<span class="logo--em">Grad</span></span> / Sva prava zadržana.
-			</p>
-			<p class="footer__developer">Razvio <a href="https://github.com/markonikolas" class="link" target="blank" rel="noreferer">n1c01ash</a>
+			<div class="footer__legal">
+				<a href="/" class="logo logo--small">Bike<span class="logo--em">Grad</span></a>
+				<p>
+					&copy;
+					<script>document.write(new Date().getFullYear())</script> Sva prava zadržana.
+				</p>
+			</div>
+			<p class="footer__developer">razvio <a href="https://github.com/markonikolas" class="link" target="blank" rel="noreferer">n1c01ash</a>
 			</p>
 		</footer>
 	</body>
