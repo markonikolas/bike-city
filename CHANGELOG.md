@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.4.0] - 2021-03-30
 ### Changed
 - Update Changelog
 - Add new bike image
