@@ -1,7 +1,12 @@
 // Font imports in "./stylesheets/base/_fonts.sass"
 
 // Styles
+import './stylesheets/locale/locale_en.sass';
 import './stylesheets/main.sass';
+
+const on_sr_locale = document.documentElement.getAttribute('lang') === 'sr';
+const on_en_locale = document.documentElement.getAttribute('lang') === 'en';	
+
 
 // Scripts
 import './scripts';
