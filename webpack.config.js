@@ -210,10 +210,6 @@ module.exports = env => {
 			filename: 'sr/index.html',
 			...templatesCommon
 		} ),
-		new HTMLWebpackPlugin( {
-			template: 'src/templates/select-template.html',
-			filename: 'index.html'
-		} ),
 		new MiniCssExtractPlugin( {
 			filename: `${BUILD_ASSETS_DIR}/styles/${assetFilename}.css`
 		} ),

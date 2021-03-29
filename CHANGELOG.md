@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.3.0] - 2021-03-28
 ### Changed
+- Remove select template
 - Add locale starter styles
 - Modify main template
 - Modify bundler config
