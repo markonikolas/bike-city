@@ -3,7 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## [1.3.0] - 2021-03-28
 ### Changed
-- Add babel-eslint
+- Modify bundler config
+- Add babel
 - Modify webpack.config.js for multiple locales
 - Add locale templates
 

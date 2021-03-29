@@ -69,7 +69,18 @@ module.exports = env => {
 			{
 				test: /\.js$/i,
 				exclude: /node_modules/,
-				use: 'babel-loader'
+				use: {
+					loader: 'babel-loader',
+					options: {
+						plugins: [
+							"@babel/plugin-syntax-dynamic-import",
+							"@babel/transform-runtime"
+						],
+						presets: [
+							"@babel/preset-env"
+						]
+					}
+				}
 			},
 			{
 				test: /\.svg$/i,
@@ -103,7 +114,8 @@ module.exports = env => {
 				loader: 'url-loader',
 				options: {
 					name: `${BUILD_ASSETS_DIR}/images/${assetFilename}.[ext]`,
-					limit: inWatchMode.check( 10240, false )
+					limit: inWatchMode.check( 10240, false ),
+					publicPath: '../'
 				}
 			}
 
@@ -138,11 +150,33 @@ module.exports = env => {
 
 	// Loader Rules
 	const styleRules = {
-		test: /\.s?[ac]ss$/gi,
+		// Match anything except locale styles
+		test: /\main.s?[ac]ss$/,
 		use: [
 			inWatchMode.check(
 				'style-loader',
 				MiniCssExtractPlugin.loader
+			),
+			{
+				loader: 'css-loader',
+				options: sourceMap
+			}
+		]
+	};
+
+	const localeRules = {
+		test: /\w+\_\w{2}\.s?[ac]ss$/, 
+		use: [
+			inWatchMode.check(
+				'style-loader',
+				{
+					options: {
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '../'
+						}
+					}
+				}
 			),
 			{
 				loader: 'css-loader',
@@ -183,6 +217,15 @@ module.exports = env => {
 		new MiniCssExtractPlugin( {
 			filename: `${BUILD_ASSETS_DIR}/styles/${assetFilename}.css`
 		} ),
+		
+		new MiniCssExtractPlugin( {
+			filename: (pathData) => {
+			if(pathData.chunk.name === 'locale_en') {
+				return `en/${pathData.chunk.name}.css`
+			}
+			return `${BUILD_ASSETS_DIR}/styles/${assetFilename}.css`;
+		}}),
+		
 		new BrowserSyncPlugin(
 			// BrowserSync options
 			{
@@ -230,7 +273,7 @@ module.exports = env => {
 		} ) );
 	}
 
-	const aditionalStyleLoaders = [
+	const postcssLoader = [
 		{
 			loader: 'postcss-loader',
 			options: {
@@ -249,8 +292,11 @@ module.exports = env => {
 		}
 	];
 	// Add aditional loaders to the rules array
-	styleRules.use.push( ...aditionalStyleLoaders );
+	styleRules.use.push( ...postcssLoader );
+	localeRules.use.push( ...postcssLoader );
+
 	modules.rules.push( styleRules );
+	modules.rules.push( localeRules );
 
 	// *******
 	// Plugins
