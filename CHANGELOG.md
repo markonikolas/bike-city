@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.3.0] - 2021-03-28
 ### Changed
+- Add locale styles directly from sass
 - Remove select template
 - Add locale starter styles
 - Modify main template
