@@ -15,11 +15,18 @@
 				<span class="menu__line"></span>
 			</div>
 			<nav class="nav header__nav">
-				<a href="/">Home</a>
-				<a href="#shop">Shop</a>
-				<a href="/blog">Blog</a>
-				<a href="#about">About</a>
-				<a href="#contact">Contact</a>
+				<a class="nav__link" href="/">Home</a>
+				<a class="nav__link" href="#shop">Shop</a>
+				<a class="nav__link" href="/blog">Blog</a>
+				<a class="nav__link" href="#about">About</a>
+				<a class="nav__link" href="#contact">Contact</a>
+				<div class="locales">
+					<button class="nav__link locales__button">Language</button>
+					<div class="locales__wrapper">
+						<span class="locale locale--active">EN</span>
+						<span class="locale">SR</span>
+					</div>
+				</div>
 			</nav>
 		</header>
 
@@ -33,6 +40,7 @@
 
 		<article id="shop" class="article shop">
 			<h2 class="article__title">Shop</h2>
+
 		</article>
 
 		<article id="about" class="article about">
@@ -44,7 +52,7 @@
 		</article>
 		<footer class="footer">
 			<div class="footer__legal">
-				<a href="/" class="logo logo--small">Bike<span class="logo--em">Shop</span></a>
+				<a href="/" class="logo logo--small">Bike<span class="logo--em">City</span></a>
 				<p>
 					&copy;
 					<script>document.write(new Date().getFullYear())</script> All rights reserved.

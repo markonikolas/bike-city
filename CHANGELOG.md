@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Changed
+- Update Navigation Menu
+
 ## [1.4.0] - 2021-03-30
 ### Changed
 - Update Changelog
