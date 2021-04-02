@@ -71,10 +71,6 @@ In order to get some benefit from this project, I'm practicing [Markdown](https:
 #### In the real world, this readme wouldn't contain this information
 ##### I just needed some content to put in this readme
 
-```javascript
-console.log('It\'s alive!');
-```
-
 ###### Tux says Hello
 
 ![Tux, the Liinux mascot](https://d33wubrfki0l68.cloudfront.net/e7ed9fe4bafe46e275c807d63591f85f9ab246ba/e2d28/assets/images/tux.png)
