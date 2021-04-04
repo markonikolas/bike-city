@@ -4,15 +4,15 @@
 	cursor: pointer
 	position: relative
 	z-index: 2
+	opacity: 1
 
 	&--active
 		color: $brand-yellow
 
 	&s
-		display: flex
-		flex-direction: column
-		height: 100px
+		display: block
 		position: relative
+		width: 40%
 
 		&--open::after
 			content: ''
@@ -27,12 +27,11 @@
 
 		&__wrapper
 			display: none
-			max-width: 50%
 			justify-content: space-between
 			align-items: center
 			padding: 10px 0
 
-	&s__button
+	&s-toggle
 		background: none
 		border: none
 		padding: 0
@@ -60,12 +59,20 @@
 			top: 50%
 
 		&--active
-			& ~ .locales__wrapper
-				display: flex
-
+			
 			&::after
-				transform: rotate(585deg) translateY(-60%)
+				transform: rotate(225deg) translateY(-60%)
 				top: 60%
 
 			&:hover
 				color: #FFF
+
+		&--down
+
+			&::after
+				top: 60%
+				transform: rotate(135deg) translateY(-60%)
+
+	&s__wrapper
+		display: none
+		width: 100%

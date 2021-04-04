@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update nav menu
 - Add jQuery
 - Update language selection presentation
 - Update Readme
