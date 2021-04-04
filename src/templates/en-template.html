@@ -15,16 +15,18 @@
 				<span class="menu__line"></span>
 			</div>
 			<nav class="nav header__nav">
-				<a class="nav__link" href="/">Home</a>
-				<a class="nav__link" href="#shop">Shop</a>
-				<a class="nav__link" href="/blog">Blog</a>
-				<a class="nav__link" href="#about">About</a>
-				<a class="nav__link" href="#contact">Contact</a>
-				<div class="locales">
-					<button class="nav__link locales__button">Language</button>
-					<div class="locales__wrapper">
-						<span class="locale locale--active">EN</span>
-						<span class="locale">SR</span>
+				<div class="nav__wrapper">
+					<a class="nav__link" href="/">Home</a>
+					<a class="nav__link" href="#shop">Shop</a>
+					<a class="nav__link" href="/blog">Blog</a>
+					<a class="nav__link" href="#about">About</a>
+					<a class="nav__link" href="#contact">Contact</a>
+					<button id="locales-button" class="locales-toggle nav__link">Language</button>
+					<div class="locales">
+						<div class="locales__wrapper">
+							<span class="locale locale--active">EN</span>
+							<a href="/sr" class="locale">SR</a>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -33,13 +35,28 @@
 		<article class="hero">
 			<h1 class="hero__title">Easy way to find your dream ride.</h1>
 			<div class="hero__clip-path">
-				<a href="#shop" class="hero__explore link link--dark">explore</a>
+				<a href="#shop" id="explore" class="hero__explore link link--dark">explore</a>
 			</div>
 
 		</article>
 
 		<article id="shop" class="article shop">
 			<h2 class="article__title">Shop</h2>
+
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading">Trail</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text">
+					<li>Suspension Travel <strong>120 - 140mm</strong></li>
+					<li>Head-Tube Angle <strong>67 - 69&deg;</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img class="image article__image" src=<%=require('/src/assets/images/shop-bike-1.png').default %> alt="Trail Bike by Santa Cruz">
+				</div>
+			</section>
 
 		</article>
 
