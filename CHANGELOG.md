@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Move functionality over to jQuery
 - Update nav menu
 - Add jQuery
 - Update language selection presentation
