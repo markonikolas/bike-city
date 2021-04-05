@@ -12,9 +12,10 @@
 	background-repeat: no-repeat
 
 	@include breakpoint(375px) 
-		height: calc(100vh - 86px)
+		height: calc(100vh - 180px)
 		background: linear-gradient(105.9deg, $brand-yellow 45%, rgba(255, 255, 255, 0) 101.82%), url('/src/assets/images/hero.jpg')
 		background-position: bottom center
+		background-repeat: no-repeat
 
 	&__title
 		font-size: 60px
@@ -26,6 +27,9 @@
 		@include breakpoint(375px)
 			font-size: 80px
 			letter-spacing: -3px
+
+		@include breakpoint(411px)
+			font-size: 8ch
 
 	&__clip-path
 		display: flex
