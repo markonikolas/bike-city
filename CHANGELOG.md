@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update Blog styles and structure
 - Add Blog section
 - Remove unnecessary scripts
 - Update Contact section styles and structure
