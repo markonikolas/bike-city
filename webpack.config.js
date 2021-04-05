@@ -127,15 +127,6 @@ module.exports = env => {
 		splitChunks: {
 			chunks: 'all',
 			cacheGroups: {
-				defaultVendors: {
-					// Note the usage of `[\\/]` as a path separator for cross-platform compatibility.
-					test: /[\\/]node_modules[\\/]lodash-es[\\/]/,
-					filename: inDevMode.check( 'vendor.js', '[contenthash].js' ),
-					// Tells webpack to ignore splitChunks.minSize, splitChunks.minChunks, splitChunk.
-					// maxAsyncRequests and splitChunks.maxInitialRequests options and always create
-					// chunks for this cache group.
-					enforce: true
-				},
 				// Imported in main.sass
 				normalize: {
 					test: /[\\/]node_modules[\\/]normalize.css[\\/]/,
