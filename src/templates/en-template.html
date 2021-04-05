@@ -15,36 +15,169 @@
 				<span class="menu__line"></span>
 			</div>
 			<nav class="nav header__nav">
-				<a href="/">Home</a>
-				<a href="#shop">Shop</a>
-				<a href="/blog">Blog</a>
-				<a href="#about">About</a>
-				<a href="#contact">Contact</a>
+				<div class="nav__wrapper">
+					<a class="nav__link" href="/">Home</a>
+					<a class="nav__link" href="#shop">Shop</a>
+					<a class="nav__link" href="#blog">Blog</a>
+					<a class="nav__link" href="#about">About</a>
+					<a class="nav__link" href="#contact">Contact</a>
+					<button id="locales-button" class="locales-toggle nav__link">Language</button>
+					<div class="locales">
+						<div class="locales__wrapper">
+							<span class="locale locale--active">EN</span>
+							<a href="/sr" class="locale">SR</a>
+						</div>
+					</div>
+				</div>
 			</nav>
 		</header>
 
 		<article class="hero">
 			<h1 class="hero__title">Easy way to find your dream ride.</h1>
 			<div class="hero__clip-path">
-				<a href="#shop" class="hero__explore link link--dark">explore</a>
+				<a href="#shop" id="explore" class="hero__explore link link--dark">explore</a>
 			</div>
-
 		</article>
 
 		<article id="shop" class="article shop">
 			<h2 class="article__title">Shop</h2>
+
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading">Trail</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text article__bullets">
+					<li>Suspension Travel <strong>120 - 140mm</strong></li>
+					<li>Head-Tube Angle <strong>67 - 69&deg;</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img class="image article__image" alt="Trail Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-1.png').default %>>
+				</div>
+
+				<button class="article__button">Order</button>
+			</section>
+
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading">Downhill</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text article__bullets">
+					<li>Suspension Travel <strong>120 - 140mm</strong></li>
+					<li>Head-Tube Angle <strong>67 - 69&deg;</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img class="image article__image" alt="Downhill Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-2.png').default %>>
+				</div>
+
+				<button class="article__button">Order</button>
+			</section>
+
+
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading">MTB</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text article__bullets">
+					<li>Suspension Travel <strong>120 - 140mm</strong></li>
+					<li>Head-Tube Angle <strong>67 - 69&deg;</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img class="image article__image" alt="MTB Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-3.png').default %>>
+				</div>
+
+				<button class="article__button">Order</button>
+			</section>
+
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading article__heading--last">Cross Country</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text article__bullets">
+					<li>Suspension Travel <strong>120 - 140mm</strong></li>
+					<li>Head-Tube Angle <strong>67 - 69&deg;</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img class="image article__image" alt="Cross Country Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
+				</div>
+
+				<button class="article__button">Order</button>
+			</section>
+
 		</article>
+
+		<article id="blog" class="article blog">
+			<h2 class="article__title">Blog</h2>
+			<section class="article__section">
+				<div class="image-wrapper"><img alt="Biker on a mountain" class="image article__image" src=<%=require('/src/assets/images/blog-choose-wisely.jpg').default %>></div>
+
+				<h3 class="article__heading article__heading--small">Choose wisely.</h3>
+				<div class="article__text">
+					<p>In order to find the answer to this question easier, we will look at certain segments that are important for a given issue.</p>
+					<p> The first segment we will consider is actually the answer to the question "What type of bike do you need?", Ie what type of riding do you prefer. Whether you will use the bike only for a ride to work or a ride in style in the city, whether you will ride mountain races, or perhaps use a bike for longer recreational rides for better health, for each of these purposes there is a bike designed for just such a style driving.</p>
+					<p>The second segment relates to the <a href="#size" class="emphasis">size</a> of the bike.</p>
+				</div>
+			</section>
+			<section id="size" class="article__section">
+				<div class="image-wrapper"><img alt="Biker on a mountain" class="image article__image" src=<%=require('/src/assets/images/blog-size-matters.jpg').default %>></div>
+				<h3 class="article__heading article__heading--small">Size matters.</h3>
+				<div class="article__text">
+					<p>We single out the size of the bicycle frame as a separate topic, considering that the frame is essentially what the bicycle carries, but also the cyclist, so you will agree to know a few more details about it. Below you can see tables with a list of frame sizes, expressed in inches or centimeters, depending on the type of bike, and the corresponding height of the rider for the given frame sizes, as well as pictorial representations.</p>
+				</div>
+			</section>
+		</article>
+
 
 		<article id="about" class="article about">
 			<h2 class="article__title">About</h2>
+			<section class="article__section">
+				<h3 class="article__heading article__heading--small">Quality and Quantity</h3>
+				<div class="article__text">
+					<p>Almost all Bike City employees are bike enthusiasts and passionate cyclists. With more than 10.000 items listed in our shop all of us have special skills as we ride road bikes, cycle cross, cross country, all mountain, freeride, downhill, BMX...There is expert advice available for all existing bike categories. Ask us and you will get the perfectly matching products at low rates!</p>
+				</div>
+				<h3 class="article__heading article__heading--small">30 Years of Experience</h3>
+				<div class="article__text">
+					<p>Nowadays Bike City is one of the largest retail and online merchants in Europe with about 60 employees, 4000 square meters (43040ft²) space and 3 buildings. We ship about 30.000 parcels worldwide annually and offer expert service</p>
+				</div>
+				<div class="image-wrapper"><img alt="Biker on a mountain" class="image article__image" src=<%=require('/src/assets/images/about.jpg').default %>></div>
+			</section>
+			<section class="article__section">
+				<h3 class="article__heading article__heading--small">Always here to help</h3>
+				<div class="article__text">
+					<p>In our huge local retail store you will find lots of bikes, parts, apparel and accessories on display, it's worth a look so please visit us once you're Near by.</p>
+					<p>One of the annual highlights is our Testival, a bike event where lots of new products are presented by the manufacturers and distributors. Not only are the products shown, but we want the customers to test these goods and give us feedback so we can sell what our customers need!</p>
+					<p>Bike City wants you to enjoy one of the greatest hobbies in the world and would love to provide you with the required products!</p>
+				</div>
+			</section>
 		</article>
 
 		<article id="contact" class="article contact">
 			<h2 class="article__title">Contact</h2>
+			<section class="article__section">
+				<h3 class="article__heading article__heading--small">Question <em class="emphasis">everything.</em></h3>
+				<h4 class="article__subheading">We’re here to help!</h4>
+				<div class="article__text">
+					<p>You can’t be the best if you dont ask questions! We reply to everyone.</p>
+				</div>
+				<form class="form" action="" method="POST">
+					<input class="form__input" type="text" placeholder="name" />
+					<input class="form__input" type="email" placeholder="email *" required />
+					<input class="form__input form__textarea" type="textarea" placeholder="message *" required />
+					<input class="form__button" type="submit" value="Submit" />
+				</form>
+			</section>
 		</article>
+
 		<footer class="footer">
 			<div class="footer__legal">
-				<a href="/" class="logo logo--small">Bike<span class="logo--em">Shop</span></a>
+				<a href="/" class="logo logo--small">Bike<span class="logo--em">City</span></a>
 				<p>
 					&copy;
 					<script>document.write(new Date().getFullYear())</script> All rights reserved.

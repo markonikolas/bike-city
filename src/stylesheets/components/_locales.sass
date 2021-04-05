@@ -1,0 +1,78 @@
+.locale
+	@extend .nav__link
+	font-size: 2rem
+	cursor: pointer
+	position: relative
+	z-index: 2
+	opacity: 1
+
+	&--active
+		color: $brand-yellow
+
+	&s
+		display: block
+		position: relative
+		width: 40%
+
+		&--open::after
+			content: ''
+			display: block
+			height: 50px
+			position: absolute	
+			left: -40px
+			width: 100vw
+			top: 0
+			height: 100%
+			background-color: lighten($brand-dark, 15%)
+
+		&__wrapper
+			display: none
+			justify-content: space-between
+			align-items: center
+			padding: 10px 0
+
+	&s-toggle
+		background: none
+		border: none
+		padding: 0
+		cursor: pointer
+		position: relative
+		z-index: 2
+		padding-right: 40px
+
+		&:not(&--active):hover::after
+			border-right: 8px solid $brand-yellow
+			border-bottom: 8px solid $brand-yellow
+				
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			width: 20px
+			height: 20px
+			border-right: 8px solid #FFF
+			border-bottom: 8px solid #FFF
+			transform: rotate(45deg) translateY(-50%)
+			transform-origin: top
+			transition: all 500ms cubic-bezier(.68,-0.55,.27,1.55)
+			right: 0
+			top: 50%
+
+		&--active
+			
+			&::after
+				transform: rotate(225deg) translateY(-60%)
+				top: 60%
+
+			&:hover
+				color: #FFF
+
+		&--down
+
+			&::after
+				top: 60%
+				transform: rotate(135deg) translateY(-60%)
+
+	&s__wrapper
+		display: none
+		width: 100%

@@ -1,0 +1,30 @@
+
+.about
+	
+	.article
+		&__section
+			height: unset
+
+			&:first-of-type
+				padding-bottom: 0
+				margin-bottom: 0
+				clip-path: polygon(0 2%, 100% 0%, 100% 100%, 0% 98%)
+				z-index: 2
+
+			&:last-of-type
+				padding-top: 60px
+				padding-bottom: 40px
+				background: $brand-yellow
+				margin-top: -40px
+				z-index: 1
+
+		&__image
+			width: 120vw
+			clip-path: polygon(0 0%, 100% 6%, 100% 100%, 0% 98%)
+			margin-top: 30px
+
+	.image-wrapper
+		height: 280px
+
+		&::after
+			display: none

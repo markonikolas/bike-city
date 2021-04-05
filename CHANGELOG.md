@@ -1,6 +1,26 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2021-04-05
+### Changed
+- Update Blog styles and structure
+- Add Blog section
+- Remove unnecessary scripts
+- Update Contact section styles and structure
+- Add Contact section
+- Add About section
+- Update shop products
+- Update shop styles for small devices
+- Add more products to shop
+- Add Shop structure and base styles
+- Move functionality over to jQuery
+- Update nav menu
+- Add jQuery
+- Update language selection presentation
+- Update Readme
+- Add section images
+- Update Navigation Menu
+
 ## [1.4.0] - 2021-03-30
 ### Changed
 - Update Changelog
