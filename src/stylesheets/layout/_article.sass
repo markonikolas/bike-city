@@ -6,6 +6,9 @@
 		background: #FFF
 		margin: 40px 0 0
 
+		@include breakpoint(375px)
+			font-size: 60px
+
 	&__section
 		@extend %body-padding
 		padding-top: 10px
@@ -28,6 +31,11 @@
 				position: absolute
 				right: 30px
 				top: 82%
+			
+			& .article__heading
+				@include breakpoint(375px)
+					font-size: 95px
+					margin-bottom: 25px
 
 	&__heading
 		font-weight: 600
@@ -35,6 +43,11 @@
 		line-height: 78px
 		margin: 0
 		color: $brand-dark
+
+		@include breakpoint(375px)
+			font-size: 145px
+			line-height: 160px
+			color: lighten($mid-grey, 60%)
 
 		&--last
 			font-size: 50px
@@ -44,7 +57,11 @@
 			font-size: 23px
 			line-height: 27px
 			margin-top: 35px
-	
+
+			@include breakpoint(375px)
+				color: $mid-grey
+				padding-top: 50px
+
 	&__subheading
 		font-weight: bold
 		font-size: 12px
@@ -52,6 +69,11 @@
 		text-transform: uppercase
 		margin: 0
 		color: $mid-grey
+
+		@include breakpoint(375px)
+			font-size: 24px
+			margin-bottom: 10px
+			word-wrap: break-word
 
 	&__image
 		width: 90vw

@@ -11,7 +11,10 @@
 	background-size: 135vh
 	background-repeat: no-repeat
 
-	// clip-path: polygon(0 0, 100% 0%, 100% 84%, 0 88%)
+	@include breakpoint(375px) 
+		height: calc(100vh - 86px)
+		background: linear-gradient(105.9deg, $brand-yellow 45%, rgba(255, 255, 255, 0) 101.82%), url('/src/assets/images/hero.jpg')
+		background-position: bottom center
 
 	&__title
 		font-size: 60px
@@ -19,6 +22,10 @@
 		margin-bottom: auto
 		line-height: 1.5ch
 		color: $brand-dark
+
+		@include breakpoint(375px)
+			font-size: 80px
+			letter-spacing: -3px
 
 	&__clip-path
 		display: flex
@@ -30,6 +37,7 @@
 		position: absolute
 		bottom: 0
 		clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0 100%)
+
 		&::before,
 		&::after
 			display: block
@@ -49,6 +57,14 @@
 			right: 50%
 			transform: rotate(45deg) translate(2px, -2px)
 
+		@include breakpoint(375px)
+			clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0px 100%)
+			padding-top: 30px
+			padding-bottom: 24px
+
 	&__explore
 		color: $brand-dark
 		position: relative
+
+		@include breakpoint(375px)
+			font-size: 1.2rem 
