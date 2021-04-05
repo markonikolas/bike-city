@@ -1,16 +1,84 @@
 .article
-	@extend %body-padding
-
-	height: 100vh
 
 	&__title
 		font-size: 40px
-		margin: 12px 0
+		padding: 20px 40px
+		background: #FFF
+		margin: 40px 0 0
 
 	&__section
+		@extend %body-padding
 		max-height: 480px
+		padding-top: 10px
+		padding-bottom: 70px	
 		width: 100%
+		background-color: $dim-grey
+		margin-bottom: 40px
+		overflow: hidden
+		position: relative
+		clip-path: polygon(0 2%, 100% 0%, 100% 95%, 0% 98%)
+		height: calc(100vh - 86px)
+		padding-bottom: 20px !important
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+		&:nth-of-type(2n)
+			& .article__image
+				transform: scaleX(-1) translateX(50%)
+
+			& .article__button
+				position: absolute
+				right: 30px
+				top: 82%
+
+		&:last-of-type
+			& .article__heading
+				font-size: 50px
+				line-height: 0.95
+
+	&__heading
+		font-weight: 600
+		font-size: 55px
+		line-height: 78px
+		margin: 0
+		color: $brand-dark
+	
+	&__subheading
+		font-weight: bold
+		font-size: 12px
+		line-height: 15px
+		text-transform: uppercase
+		margin: 0
+		color: $mid-grey
 
 	&__image
-		width: 100%
+		width: 90vw
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
 
+	&__text
+		display: none
+
+	&__button
+		background: $brand-yellow
+		box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25)
+		border: none
+		position: relative
+		z-index: 2
+		width: 85px
+		height: 36px
+		box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25)
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		font-weight: bold
+		font-size: 20px
+		line-height: 29px
+		letter-spacing: 0.01em
+		text-transform: uppercase
+		cursor: pointer
+		top: 20px
+
+		@include skew()
+
+		&:hover
+			background: $brand-dark
+			color: $brand-yellow
