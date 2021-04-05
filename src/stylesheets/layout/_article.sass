@@ -8,9 +8,7 @@
 
 	&__section
 		@extend %body-padding
-		max-height: 480px
 		padding-top: 10px
-		padding-bottom: 70px	
 		width: 100%
 		background-color: $dim-grey
 		margin-bottom: 40px
@@ -18,8 +16,9 @@
 		position: relative
 		clip-path: polygon(0 2%, 100% 0%, 100% 95%, 0% 98%)
 		height: calc(100vh - 86px)
-		padding-bottom: 20px !important
+		padding-bottom: 20px
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		color: $mid-grey
 
 		&:nth-of-type(2n)
 			& .article__image
@@ -30,17 +29,21 @@
 				right: 30px
 				top: 82%
 
-		&:last-of-type
-			& .article__heading
-				font-size: 50px
-				line-height: 0.95
-
 	&__heading
 		font-weight: 600
 		font-size: 55px
 		line-height: 78px
 		margin: 0
 		color: $brand-dark
+
+		&--last
+			font-size: 50px
+			line-height: 0.95
+
+		&--small
+			font-size: 23px
+			line-height: 27px
+			margin-top: 35px
 	
 	&__subheading
 		font-weight: bold
@@ -56,8 +59,14 @@
 		left: 50%
 		transform: translateX(-50%)
 
-	&__text
+	&__bullets
 		display: none
+
+	&__text
+		font-weight: 400
+		font-size: 14px
+		line-height: 20px
+		opacity: 0.95
 
 	&__button
 		background: $brand-yellow
