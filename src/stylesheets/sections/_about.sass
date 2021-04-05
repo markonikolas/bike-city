@@ -23,15 +23,20 @@
 			margin-bottom: 20px
 			margin-top: 0
 
+			@include breakpoint(375px)
+				letter-spacing: -1px
+			
 		&__text
 			font-size: 15px
 			line-height: 1.618
-
 
 		&__image
 			width: 120vw
 			clip-path: polygon(0 0%, 100% 6%, 100% 100%, 0% 98%)
 			margin-top: 30px
+
+			@include breakpoint(375px)
+				margin-top: -10px
 
 	.image-wrapper
 		height: 280px
