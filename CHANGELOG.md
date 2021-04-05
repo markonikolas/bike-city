@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Add Contact section
 - Add About section
 - Update shop products
 - Update shop styles for small devices
