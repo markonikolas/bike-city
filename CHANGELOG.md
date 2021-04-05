@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.5.0] - 2021-04-05
 ### Changed
 - Update Blog styles and structure
 - Add Blog section
