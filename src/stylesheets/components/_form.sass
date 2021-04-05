@@ -1,0 +1,30 @@
+.form
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	height: 390px
+
+	&__input,
+	&__button
+		height: 58px
+		border: none
+
+	&__textarea
+		height: 108px
+
+	&__input 
+		padding-left: 25px
+		color: $dim-grey
+
+		&:focus-visible
+			outline: 3px solid $brand-yellow 
+
+	&__button
+		background: $brand-yellow
+		color: $mid-grey
+		cursor: pointer
+
+		&:hover
+			background: $mid-grey
+			color: $brand-yellow
+			transition: 200ms all ease-in-out
