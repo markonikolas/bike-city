@@ -1,7 +1,7 @@
 {
-    "name": "starter",
+    "name": "bike-city",
     "version": "1.5.0",
-    "description": "Template repository for js and sass projects",
+    "description": "Bike store for school project",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/n1c01ash/starter.git"
+        "url": "git+https://github.com/n1c01ash/website-project.git"
     },
     "keywords": [
         "starter"
@@ -21,9 +21,9 @@
     "author": "Marko Nikolaš",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/n1c01ash/starter/issues"
+        "url": "https://github.com/n1c01ash/website-project/issues"
     },
-    "homepage": "https://github.com/n1c01ash/starter#readme",
+    "homepage": "https://github.com/n1c01ash/website-project#readme",
     "browserslist": [
         "> .5%, last 5 versions"
     ],
@@ -62,7 +62,6 @@
     },
     "dependencies": {
         "babel-core": "^6.26.3",
-        "lodash-es": "^4.17.21",
         "normalize.css": "^8.0.1"
     }
 }
