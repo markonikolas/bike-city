@@ -7,21 +7,20 @@ import "./stylesheets/main.sass";
 const on_sr_locale = document.documentElement.getAttribute("lang") === "sr";
 const on_en_locale = document.documentElement.getAttribute("lang") === "en";
 
-// Scripts
-import "./scripts";
-
-// Only files accepted here will be hot reloaded.
-// When making changes in this file be sure to reload the page.
-if (module && module.hot) {
-	module.hot.accept("./scripts/", () => "Module accepted.");
-}
-
 $(function () {
 	function scrollToArticle(e) {
 		e.preventDefault();
+		console.log(e.target)
 		const target = e.target.hash,
 			$target = $(target);
-		const $amount = $target.offset().top;
+
+		const link = e.target.href || null;
+
+		let $amount = $target.offset() || 0;
+
+		if($amount) {
+			$amount = $amount.top;
+		}
 
 		$("html, body")
 			.stop()
@@ -33,6 +32,10 @@ $(function () {
 				"swing",
 				function () {
 					window.location.hash = target;
+					console.log(link)
+					if(link) {
+						window.location = link;	
+					}
 				}
 			);
 	}
