@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [2.0.0] - 2021-04-06
 ### Changed
 - Add Mobile breakpoint 
 
