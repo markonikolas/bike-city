@@ -61,7 +61,7 @@ module.exports = env => {
 	};
 
 	const sourceMap = {
-		sourceMap: isDev
+		sourceMap: false
 	};
 
 	const modules = {
@@ -69,19 +69,9 @@ module.exports = env => {
 			{
 				test: /\.js$/i,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						plugins: [
-							"@babel/plugin-syntax-dynamic-import",
-							"@babel/transform-runtime"
-						],
-						presets: [
-							"@babel/preset-env"
-						]
-					}
-				}
+				use: ['babel-loader']
 			},
+					
 			{
 				test: /\.svg$/i,
 				loader: 'url-loader',
@@ -154,28 +144,7 @@ module.exports = env => {
 			}
 		]
 	};
-
-	const localeRules = {
-		test: /\w+\_\w{2}\.s?[ac]ss$/, 
-		use: [
-			inWatchMode.check(
-				'style-loader',
-				{
-					options: {
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: '../'
-						}
-					}
-				}
-			),
-			{
-				loader: 'css-loader',
-				options: sourceMap
-			}
-		]
-	};
-
+	
 	const optimization = inWatchMode.check( { minimize: false }, optimizationOptions );
 
 	const templatesCommon = {
@@ -247,8 +216,8 @@ module.exports = env => {
 	if ( CssMinimizerPlugin ) {
 		// Webpack 5 feature `...` to 'extend' Terser and other minimizers
 		optimizationOptions.minimizer.push( `...`, new CssMinimizerPlugin( {
+			sourceMap,
 			parallel: true,
-			sourceMap: true,
 			minimizerOptions: {
 				preset: [
 					'default',
@@ -264,7 +233,7 @@ module.exports = env => {
 		{
 			loader: 'postcss-loader',
 			options: {
-				sourceMap: isDev,
+				...sourceMap,
 				postcssOptions: {
 					plugins: [
 						'autoprefixer',
@@ -280,10 +249,8 @@ module.exports = env => {
 	];
 	// Add aditional loaders to the rules array
 	styleRules.use.push( ...postcssLoader );
-	localeRules.use.push( ...postcssLoader );
 
 	modules.rules.push( styleRules );
-	modules.rules.push( localeRules );
 
 	// *******
 	// Plugins

@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Changed
+- Fix webpack not exporting assets
+
 ## [2.0.2] - 21-04-06
 ### Fixed
 - Fix rwd issues
