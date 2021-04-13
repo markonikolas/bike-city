@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update asset export with csspurge
 - Update gitignore
 - Fix webpack not exporting assets
 
