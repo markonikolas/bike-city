@@ -16,7 +16,9 @@
 		background: linear-gradient(105.9deg, $brand-yellow 45%, rgba(255, 255, 255, 0) 101.82%), url('/src/assets/images/hero.jpg')
 		background-position: bottom center
 		background-repeat: no-repeat
+		background-size: cover
 
+	
 	&__title
 		font-size: 60px
 		margin-top: 20px
@@ -30,6 +32,10 @@
 
 		@include breakpoint(411px)
 			font-size: 8ch
+
+		@include breakpoint(768px)
+			font-size: 13.5ch
+
 
 	&__clip-path
 		display: flex
