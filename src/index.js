@@ -1,16 +1,12 @@
 import $ from "jquery";
 
 // Styles
-import "./stylesheets/locale/locale_en.sass";
 import "./stylesheets/main.sass";
-
-const on_sr_locale = document.documentElement.getAttribute("lang") === "sr";
-const on_en_locale = document.documentElement.getAttribute("lang") === "en";
 
 $(function () {
 	function scrollToArticle(e) {
 		e.preventDefault();
-		console.log(e.target)
+		console.log(e.target);
 		const target = e.target.hash,
 			$target = $(target);
 
@@ -18,7 +14,7 @@ $(function () {
 
 		let $amount = $target.offset() || 0;
 
-		if($amount) {
+		if ($amount) {
 			$amount = $amount.top;
 		}
 
@@ -32,9 +28,9 @@ $(function () {
 				"swing",
 				function () {
 					window.location.hash = target;
-					console.log(link)
-					if(link) {
-						window.location = link;	
+					console.log(link);
+					if (link) {
+						window.location = link;
 					}
 				}
 			);
