@@ -40,6 +40,8 @@ $(function () {
 		const $nav = $(this).next("nav.header__nav");
 		const $localeIsOpen = $nav.find(".locales-toggle--active");
 
+		$(this).toggleClass('menu--open');
+		
 		// Close locales submenu if opened
 		if ($localeIsOpen.length) {
 			$localeIsOpen

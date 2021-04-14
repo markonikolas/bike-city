@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Improve hamburger menu
 - Remove unnecessary stylesheets
 - Update asset export with csspurge
 - Update gitignore

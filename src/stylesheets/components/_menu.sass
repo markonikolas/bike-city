@@ -1,28 +1,48 @@
+@use 'sass:math'
+
 .menu
-	width: 40px
-	height: 25px
-	border-radius: 5px
 	position: relative
+	width: 40px
+	height: 24px
+
+	border-radius: 5px
 	cursor: pointer
 
+	&::before,
+	&::after
+		@extend %line
+		transform-origin: left
+		transition: all 350ms ease
+		
 	&__line
-		position: absolute
+		@extend %line
 
-		&,
-		&::before,
-		&::after
-			display: block
-			content: ''
-			position: absolute
-			height: 5px
-			width: 100%
-			background: $brand-dark
-			left: 0
-			border-radius: 5px
-			background: #FFF
+		top: 50%
+		transform: translateY(-50%)
+
+		transition: transform 250ms ease
+		transform-origin: left
+
+	&::after
+		bottom: 0
+
+	&--open
+		$thickness: 5
+		$sideA: 40
+		$sideB: 24
+		$diagonal: math.sqrt(($sideA * $sideA) + ($sideB * $sideB))
+
+		width: #{$sideA}px
+
+		.menu__line
+			transform: rotateY(90deg)
+
+		$rotation: 30deg
 
 		&::before
-			top: 10px
-
+			transform: rotate($rotation)
+			width: #{$diagonal - $thickness}px
+		
 		&::after
-			top: 20px
+			transform: rotate(-$rotation)
+			width: #{$diagonal - $thickness}px
