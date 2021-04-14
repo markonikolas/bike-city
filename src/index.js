@@ -41,6 +41,7 @@ $(function () {
 		const $localeIsOpen = $nav.find(".locales-toggle--active");
 
 		$(this).toggleClass('menu--open');
+		$('body').toggleClass('no-scroll');
 		
 		// Close locales submenu if opened
 		if ($localeIsOpen.length) {

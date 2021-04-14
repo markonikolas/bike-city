@@ -27,9 +27,10 @@
 		bottom: 0
 
 	&--open
-		$thickness: 5
+		$thickness: 6
 		$sideA: 40
 		$sideB: 24
+		$rotation: 28deg
 		$diagonal: math.sqrt(($sideA * $sideA) + ($sideB * $sideB))
 
 		width: #{$sideA}px
@@ -37,12 +38,10 @@
 		.menu__line
 			transform: rotateY(90deg)
 
-		$rotation: 30deg
-
 		&::before
 			transform: rotate($rotation)
-			width: #{$diagonal - $thickness}px
+			width: #{math.floor($diagonal - $thickness / 2)}px
 		
 		&::after
 			transform: rotate(-$rotation)
-			width: #{$diagonal - $thickness}px
+			width: #{math.floor($diagonal - $thickness / 2)}px

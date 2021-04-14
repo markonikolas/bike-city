@@ -1,9 +1,11 @@
 .locale
 	@extend .nav__link
-	font-size: 2rem
-	cursor: pointer
+	margin-left: 20px
 	position: relative
 	z-index: 2
+
+	font-size: 2rem
+	cursor: pointer
 	opacity: 1
 
 	&--active
@@ -29,7 +31,6 @@
 			display: none
 			justify-content: space-between
 			align-items: center
-			padding: 10px 0
 
 	&s-toggle
 		background: none
@@ -38,11 +39,11 @@
 		cursor: pointer
 		position: relative
 		z-index: 2
-		padding-right: 40px
+		padding-right: 50px
 
 		&:not(&--active):hover::after
-			border-right: 8px solid $brand-yellow
-			border-bottom: 8px solid $brand-yellow
+			border-right: 6px solid $brand-yellow
+			border-bottom: 6px solid $brand-yellow
 				
 		&::after
 			content: ''
@@ -50,12 +51,12 @@
 			position: absolute
 			width: 20px
 			height: 20px
-			border-right: 8px solid #FFF
-			border-bottom: 8px solid #FFF
+			border-right: 6px solid #FFF
+			border-bottom: 6px solid #FFF
 			transform: rotate(45deg) translateY(-50%)
 			transform-origin: top
 			transition: all 500ms cubic-bezier(.68,-0.55,.27,1.55)
-			right: 0
+			right: 6px
 			top: 50%
 
 		&--active
