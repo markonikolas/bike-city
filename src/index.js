@@ -6,7 +6,6 @@ import "./stylesheets/main.sass";
 $(function () {
 	function scrollToArticle(e) {
 		e.preventDefault();
-		console.log(e.target);
 		const target = e.target.hash,
 			$target = $(target);
 
@@ -28,7 +27,6 @@ $(function () {
 				"swing",
 				function () {
 					window.location.hash = target;
-					console.log(link);
 					if (link) {
 						window.location = link;
 					}
@@ -40,9 +38,9 @@ $(function () {
 		const $nav = $(this).next("nav.header__nav");
 		const $localeIsOpen = $nav.find(".locales-toggle--active");
 
-		$(this).toggleClass('menu--open');
-		$('body').toggleClass('no-scroll');
-		
+		$(this).toggleClass("menu--open");
+		$("body").toggleClass("no-scroll");
+
 		// Close locales submenu if opened
 		if ($localeIsOpen.length) {
 			$localeIsOpen
@@ -58,7 +56,7 @@ $(function () {
 		});
 
 		// Toggle main navigation
-		$nav.slideToggle();
+		$nav.toggleClass("nav--open");
 	});
 
 	$("#locales-button").on("mousedown", function () {
@@ -72,7 +70,7 @@ $(function () {
 		$this.toggleClass("locales-toggle--active");
 
 		setTimeout(function () {
-			$this.next(".locales").find(".locales__wrapper").slideToggle();
+			$this.next(".locales").toggleClass("locales--open");
 		}, 200);
 	});
 

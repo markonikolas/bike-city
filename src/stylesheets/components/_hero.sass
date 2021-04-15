@@ -1,63 +1,37 @@
 .hero
-	@extend %body-padding
 	height: calc(100vh - #{$header-height})
-	display: flex
-	flex-direction: column
-	justify-content: space-between
 
+	background: linear-gradient(105.9deg, #F3E24B 29.76%, rgba(255, 255, 255, 0) 101.82%), bottom center / 145vh no-repeat url('/src/assets/images/hero.jpg') $brand-yellow
 	font-family: "Cabin", sans-serif
-	background: linear-gradient(105.9deg, #F3E24B 29.76%, rgba(255, 255, 255, 0) 101.82%), url('/src/assets/images/hero.jpg')
 
-	background-size: 135vh
-	background-repeat: no-repeat
-
-	@include breakpoint(375px) 
-		height: calc(100vh - 180px)
-		background: linear-gradient(105.9deg, $brand-yellow 45%, rgba(255, 255, 255, 0) 101.82%), url('/src/assets/images/hero.jpg')
-		background-position: bottom center
-		background-repeat: no-repeat
-		background-size: cover
-
-	
 	&__title
-		font-size: 60px
-		margin-top: 20px
-		margin-bottom: auto
+		font-size: 3.4rem
 		line-height: 1.5ch
 		color: $brand-dark
+		margin: 0
+		@extend %body-padding
 
-		@include breakpoint(375px)
-			font-size: 80px
-			letter-spacing: -3px
-
-		@include breakpoint(411px)
-			font-size: 8ch
-
-		@include breakpoint(768px)
-			font-size: 13.5ch
-
-
-	&__clip-path
+	&__explore
+		position: absolute
 		display: flex
 		justify-content: center
 		align-self: center
-		padding: 12px 12px 24px
+		padding: 1.5rem 0.75em 1.5rem
 		background: #FFF
 		width: 100%
-		position: absolute
 		bottom: 0
 		clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0 100%)
 
 		&::before,
 		&::after
+			position: absolute
 			display: block
 			content: ''
-			width: 10px
 			height: 4px
-			position: absolute
+			width: 10px
 			background: $brand-dark
 			border-radius: 5px
-			bottom: 8px
+			bottom: 12px
 
 		&::before
 			left: 50%
@@ -68,13 +42,6 @@
 			transform: rotate(45deg) translate(2px, -2px)
 
 		@include breakpoint(375px)
-			clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0px 100%)
 			padding-top: 30px
 			padding-bottom: 24px
-
-	&__explore
-		color: $brand-dark
-		position: relative
-
-		@include breakpoint(375px)
 			font-size: 1.2rem 

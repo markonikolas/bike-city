@@ -1,36 +1,26 @@
 .locale
 	@extend .nav__link
-	margin-left: 20px
 	position: relative
-	z-index: 2
 
 	font-size: 2rem
 	cursor: pointer
-	opacity: 1
 
 	&--active
 		color: $brand-yellow
 
 	&s
-		display: block
+		display: flex
 		position: relative
-		width: 40%
+		height: 0
+		width: 50%
+		justify-content: space-between
+		align-items: center
 
-		&--open::after
-			content: ''
-			display: block
+		overflow: hidden
+		transition: height 500ms ease
+
+		&--open
 			height: 50px
-			position: absolute	
-			left: -40px
-			width: 100vw
-			top: 0
-			height: 100%
-			background-color: lighten($brand-dark, 15%)
-
-		&__wrapper
-			display: none
-			justify-content: space-between
-			align-items: center
 
 	&s-toggle
 		background: none
@@ -73,7 +63,3 @@
 			&::after
 				top: 60%
 				transform: rotate(135deg) translateY(-60%)
-
-	&s__wrapper
-		display: none
-		width: 100%

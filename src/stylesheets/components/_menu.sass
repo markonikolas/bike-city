@@ -12,36 +12,32 @@
 	&::after
 		@extend %line
 		transform-origin: left
-		transition: all 350ms ease
+		transition: all 550ms ease
+		transform-origin: center
 		
 	&__line
 		@extend %line
 
 		top: 50%
 		transform: translateY(-50%)
-
 		transition: transform 250ms ease
-		transform-origin: left
 
 	&::after
 		bottom: 0
 
 	&--open
-		$thickness: 6
-		$sideA: 40
-		$sideB: 24
-		$rotation: 28deg
-		$diagonal: math.sqrt(($sideA * $sideA) + ($sideB * $sideB))
+		$rotation: 0.63turn
+		$translate: 50%
 
-		width: #{$sideA}px
+		height: 40px
 
 		.menu__line
 			transform: rotateY(90deg)
 
 		&::before
-			transform: rotate($rotation)
-			width: #{math.floor($diagonal - $thickness / 2)}px
-		
+			top: $translate
+			transform: rotate($rotation) translateY($translate)
+
 		&::after
-			transform: rotate(-$rotation)
-			width: #{math.floor($diagonal - $thickness / 2)}px
+			transform: rotate(-$rotation) translateY(-$translate)
+			bottom: $translate
