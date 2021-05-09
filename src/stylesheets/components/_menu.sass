@@ -1,43 +1,38 @@
 @use 'sass:math'
 
 .menu
-	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
 	width: 40px
-	height: 24px
+	height: 26px
 
 	border-radius: 5px
 	cursor: pointer
 
+	&:focus,
+	&:focus-within,
+	&:focus-visible
+		outline: 1px dotted $white
+
 	&::before,
 	&::after
-		@extend %line
-		transform-origin: left
+		content: ''
 		transition: all 550ms ease
-		transform-origin: center
-		
-	&__line
-		@extend %line
-
-		top: 50%
-		transform: translateY(-50%)
-		transition: transform 250ms ease
-
-	&::after
-		bottom: 0
+		height: 5px
+		background-color: $white
 
 	&--open
-		$rotation: 0.63turn
-		$translate: 50%
+		$rotation: -45deg
+		$origin: right
 
-		height: 40px
-
-		.menu__line
-			transform: rotateY(90deg)
+		height: 32px
 
 		&::before
-			top: $translate
-			transform: rotate($rotation) translateY($translate)
+			transform-origin: top $origin
+			transform: rotate($rotation)
 
 		&::after
-			transform: rotate(-$rotation) translateY(-$translate)
-			bottom: $translate
+			transform-origin: bottom $origin
+			transform: rotate(-$rotation)
