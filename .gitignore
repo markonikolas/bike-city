@@ -17,3 +17,6 @@
 
 # logs and reports
 report
+
+# IDE
+.idea/
