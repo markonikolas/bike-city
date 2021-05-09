@@ -1,78 +1,47 @@
-import $ from "jquery";
+import $ from 'jquery';
 
 // Styles
-import "./stylesheets/main.sass";
+import './stylesheets/main.sass';
 
-$(function () {
-	function scrollToArticle(e) {
+$( () => {
+	function scrollToArticle( e ) {
 		e.preventDefault();
-		const target = e.target.hash,
-			$target = $(target);
+		const target = e.target.hash;
+		const $target = $( target );
 
 		const link = e.target.href || null;
 
 		let $amount = $target.offset() || 0;
 
-		if ($amount) {
+		if ( $amount ) {
 			$amount = $amount.top;
 		}
 
-		$("html, body")
+		// Animate scrolling
+		$( 'html, body' )
 			.stop()
 			.animate(
 				{
-					scrollTop: $amount,
+					scrollTop: $amount
 				},
 				500,
-				"swing",
-				function () {
+				'swing',
+				() => {
 					window.location.hash = target;
-					if (link) {
+					if ( link ) {
 						window.location = link;
 					}
 				}
 			);
 	}
 
-	$("#menu").on("click", function () {
-		const $nav = $(this).next("nav.header__nav");
-		const $localeIsOpen = $nav.find(".locales-toggle--active");
-
-		$(this).toggleClass("menu--open");
-		$("body").toggleClass("no-scroll");
-
-		// Close locales submenu if opened
-		if ($localeIsOpen.length) {
-			$localeIsOpen
-				.removeClass("locales-toggle--active")
-				.next(".locales")
-				.find(".locales__wrapper")
-				.slideUp();
-		}
-
-		$(".nav__link:not(.locales-toggle)").on("click", function (e) {
-			$(this).closest(".header__nav").slideUp();
-			scrollToArticle(e);
-		});
-
+	$( '#menu' ).on( 'click', function () {
 		// Toggle main navigation
-		$nav.toggleClass("nav--open");
-	});
+		$( this ).toggleClass( 'menu--open' );
 
-	$("#locales-button").on("mousedown", function () {
-		$(this).toggleClass("locales-toggle--down");
-	});
+		// Lock body from scrolling
+		$( 'body' ).toggleClass( 'no-scroll' );
+	} );
 
-	$("#locales-button").on("mouseup", function () {
-		const $this = $(this);
-
-		$this.removeClass("locales-toggle--down");
-		$this.toggleClass("locales-toggle--active");
-
-		setTimeout(function () {
-			$this.next(".locales").toggleClass("locales--open");
-		}, 200);
-	});
-
-	$("#explore").on("click", scrollToArticle);
-});
+	$( '#explore' ).on( 'click', e => scrollToArticle( e ) );
+} );
