@@ -20,12 +20,7 @@
             "error",
             "always"
         ],
-        "comma-dangle": [
-            "error",
-            {
-                "functions": "never"
-            }
-        ],
+        "comma-dangle": 2,
         "quotes": [
             "error",
             "single",
