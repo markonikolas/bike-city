@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update links to be usable on keyboard
+- Update asset generation
 - Update nav menu
 - Improve hamburger menu
 - Remove unnecessary stylesheets
