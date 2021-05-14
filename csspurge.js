@@ -1,6 +1,6 @@
 (async function purgeStylesWithHtml() {
-	const csspurge = require("css-purge");
-	const fs = require("fs/promises");
+	const csspurge = require('css-purge');
+	const fs = require('fs/promises');
 
 	const assetDir = `${__dirname}/public/static`;
 	const stylesDir = `${assetDir}/styles`;
@@ -15,7 +15,7 @@
 				css_output: `${stylesDir}/${style}`,
 				verbose: true,
 			},
-			"config/csspurge.config.json"
+			'config/csspurge.config.json',
 		);
 	});
 })();
