@@ -1,47 +1,73 @@
 .hero
-	height: calc(100vh - #{$header-height})
+	display: flex
+	flex-direction: column
+	height: $screen-height--no-header
+	font-family: 'Cabin', sans-serif
+	background: linear-gradient(105.9deg, $brand-yellow 40%, rgba(255, 255, 255, 0) 150%), url('/src/assets/images/hero.jpg') no-repeat left
+	background-size: cover
 
-	background: linear-gradient(105.9deg, #F3E24B 29.76%, rgba(255, 255, 255, 0) 101.82%), bottom center / 145vh no-repeat url('/src/assets/images/hero.jpg') $brand-yellow
-	font-family: "Cabin", sans-serif
+	&.hero--active
+		background: linear-gradient(105.9deg, $brand-dark 70%, rgba(255, 255, 255, 0) 150%), url('/src/assets/images/hero.jpg') no-repeat left
+		background-size: cover
 
 	&__title
-		font-size: 3.4rem
+		flex: 1
+		padding: $v-padding
+		margin: 0
+		font-size: 3.2rem
 		line-height: 1.5ch
 		color: $brand-dark
-		margin: 0
-		@extend %body-padding
+		transition: transform 500ms ease
+
+		@include breakpoint(small)
+			font-size: 4.6rem
 
 	&__explore
-		position: absolute
 		display: flex
+		flex-direction: column
 		justify-content: center
-		align-self: center
-		padding: 1.5rem 0.75em 1.5rem
-		background: #FFF
+		align-items: center
+		padding: 1.5em 0.75rem 2em
 		width: 100%
-		bottom: 0
+		z-index: 9
+		letter-spacing: 0.05em
+		background: $white
+		transition: transform 250ms ease
 		clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0 100%)
 
-		&::before,
-		&::after
-			position: absolute
-			display: block
-			content: ''
-			height: 4px
-			width: 10px
-			background: $brand-dark
-			border-radius: 5px
-			bottom: 12px
+		@include breakpoint(small)
+			font-size: 1.2rem
 
-		&::before
-			left: 50%
-			transform: rotate(-45deg) translate(-2px, -2px)
+		.link
+			@extend %outline
+			@extend %outline--dark
 
-		&::after
-			right: 50%
-			transform: rotate(45deg) translate(2px, -2px)
+		.arrow
+			position: relative
 
-		@include breakpoint(375px)
-			padding-top: 30px
-			padding-bottom: 24px
-			font-size: 1.2rem 
+			@keyframes hover
+				0%
+					transform: translateY(0)
+				100%
+					transform: translateY(10px)
+
+			animation: hover 3500ms ease-in-out infinite alternate
+
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				display: block
+				bottom: -0.75em
+				background: $brand-dark
+				width: 0.6rem
+				height: 0.25rem
+				border-radius: 0.15rem
+
+			&::before
+				left: 50%
+				transform: rotate(-45deg) translate(-2px, -2px)
+
+			&::after
+				right: 50%
+				transform: rotate(45deg) translate(2px, -2px)

@@ -4,20 +4,9 @@
 	justify-content: space-between
 	height: 390px
 
-	&__input,
-	&__button
-		height: 58px
-		border: none
-
-	&__textarea
-		height: 108px
-
-	&__input 
+	&__input
 		padding-left: 25px
 		color: $mid-grey
-
-		&:focus-visible
-			outline: 3px solid $brand-yellow 
 
 	&__button
 		background: $brand-yellow
@@ -28,3 +17,10 @@
 			background: $mid-grey
 			color: $brand-yellow
 			transition: 200ms all ease-in-out
+
+	&__input, &__button
+		height: 58px
+		border: none
+
+	&__textarea
+		height: 108px

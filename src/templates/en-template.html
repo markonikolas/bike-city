@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<title>Bike City - Find your dream ride</title>
 	</head>
 
 	<body>
 		<header class="header">
-			<a href="/" class="logo">Bike<span class="logo--em">City</span></a>
-			<div id="menu" class="menu">
-			</div>
+			<a class="logo" href="/">Bike<span class="logo--em">City</span></a>
+			<div class="menu" id="menu" tabindex="0"></div>
 			<nav class="nav header__nav">
 				<a class="nav__link" href="/">Home</a>
 				<a class="nav__link" href="#shop">Shop</a>
 				<a class="nav__link" href="#blog">Blog</a>
 				<a class="nav__link" href="#about">About</a>
 				<a class="nav__link" href="#contact">Contact</a>
-				<button id="locales-button" class="locales-toggle nav__link">Language</button>
 				<div class="locales">
 					<span class="locale locale--active">EN</span>
-					<a href="/sr" class="locale">SR</a>
+					<a class="locale" href="/sr">SR</a>
 				</div>
 			</nav>
 		</header>
 
-		<article class="hero">
-			<h1 class="hero__title">Easy way to find your dream ride.</h1>
-			<a id="explore" href="#shop" class="link link--dark hero__explore">explore</a>
+		<article class="hero" id="hero">
+			<h1 class="hero__title" id="hero-title">Easy way to find your dream ride.</h1>
+			<div class="hero__explore">
+				<a href="#shop" id="explore" class="link link--dark"> explore </a>
+				<span class="arrow"></span>
+			</div>
 		</article>
 
-		<article id="shop" class="article shop">
+		<article class="article shop" id="shop">
 			<h2 class="article__title">Shop</h2>
 
 			<section class="article__section">
@@ -46,12 +46,11 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img class="image article__image" alt="Trail Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-1.png').default %>>
+					<img alt='Trail Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-1.png').default %> >
 				</div>
 
 				<button class="article__button">Order</button>
 			</section>
-
 
 			<section class="article__section">
 				<div>
@@ -64,7 +63,7 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img class="image article__image" alt="Cross Country Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
+					<img alt='Cross Country Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
 				</div>
 
 				<button class="article__button">Order</button>
@@ -81,7 +80,7 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img class="image article__image" alt="MTB Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-3.png').default %>>
+					<img alt='MTB Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
 				</div>
 
 				<button class="article__button">Order</button>
@@ -98,60 +97,91 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img class="image article__image" alt="Downhill Bike by Santa Cruz" src=<%=require('/src/assets/images/shop-bike-2.png').default %>>
+					<img alt='Downhill Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-2.png').default %> >
 				</div>
 
 				<button class="article__button">Order</button>
 			</section>
-
 		</article>
 
-		<article id="blog" class="article blog">
+		<article class="article blog" id="blog">
 			<h2 class="article__title">Blog</h2>
 			<section class="article__section">
-				<div class="image-wrapper"><img alt="Biker on a mountain" class="image article__image" src=<%=require('/src/assets/images/blog-choose-wisely.jpg').default %>></div>
-
+				<div class="image-wrapper">
+					<img alt='Biker on a mountain' class='image article__image' src=<%=require('/src/assets/images/blog-choose-wisely.jpg').default %> >
+				</div>
 				<h3 class="article__heading article__heading--small">Choose wisely.</h3>
 				<div class="article__text">
 					<p>In order to find the answer to this question easier, we will look at certain segments that are important for a given issue.</p>
-					<p> The first segment we will consider is actually the answer to the question "What type of bike do you need?", Ie what type of riding do you prefer. Whether you will use the bike only for a ride to work or a ride in style in the city, whether you will ride mountain races, or perhaps use a bike for longer recreational rides for better health, for each of these purposes there is a bike designed for just such a style driving.</p>
-					<p>The second segment relates to the <a href="#size" class="emphasis">size</a> of the bike.</p>
+					<p>
+						The first segment we will consider is actually the answer to the question "What type of bike do you need?", Ie what type of riding do
+						you prefer. Whether you will use the bike only for a ride to work or a ride in style in the city, whether you will ride mountain races,
+						or perhaps use a bike for longer recreational rides for better health, for each of these purposes there is a bike designed for just such
+						a style driving.
+					</p>
+					<p>
+						The second segment relates to the
+						<a class="emphasis" href="#size">size</a>
+						of the bike.
+					</p>
 				</div>
 			</section>
-			<section id="size" class="article__section">
-				<div class="image-wrapper"><img alt="Biker on a mountain" class="image article__image" src=<%=require('/src/assets/images/blog-size-matters.jpg').default %>></div>
+			<section class="article__section" id="size">
+				<div class="image-wrapper">
+					<img alt='Biker on a mountain' class='image article__image' src=<%=require('/src/assets/images/blog-size-matters.jpg').default %> >
+				</div>
 				<h3 class="article__heading article__heading--small">Size matters.</h3>
 				<div class="article__text">
-					<p>We single out the size of the bicycle frame as a separate topic, considering that the frame is essentially what the bicycle carries, but also the cyclist, so you will agree to know a few more details about it. Below you can see tables with a list of frame sizes, expressed in inches or centimeters, depending on the type of bike, and the corresponding height of the rider for the given frame sizes, as well as pictorial representations.</p>
+					<p>
+						We single out the size of the bicycle frame as a separate topic, considering that the frame is essentially what the bicycle carries, but
+						also the cyclist, so you will agree to know a few more details about it. Below you can see tables with a list of frame sizes, expressed
+						in inches or centimeters, depending on the type of bike, and the corresponding height of the rider for the given frame sizes, as well as
+						pictorial representations.
+					</p>
 				</div>
 			</section>
 		</article>
 
-
-		<article id="about" class="article about">
+		<article class="article about" id="about">
 			<h2 class="article__title">About</h2>
 			<section class="article__section">
 				<h3 class="article__heading article__heading--small">Quality and Quantity</h3>
 				<div class="article__text">
-					<p>Almost all Bike City employees are bike enthusiasts and passionate cyclists. With more than 10.000 items listed in our shop all of us have special skills as we ride road bikes, cycle cross, cross country, all mountain, freeride, downhill, BMX...There is expert advice available for all existing bike categories. Ask us and you will get the perfectly matching products at low rates!</p>
+					<p>
+						Almost all Bike City employees are bike enthusiasts and passionate cyclists. With more than 10.000 items listed in our shop all of us
+						have special skills as we ride road bikes, cycle cross, cross country, all mountain, free-ride, downhill, BMX...There is expert advice
+						available for all existing bike categories. Ask us and you will get the perfectly matching products at low rates!
+					</p>
 				</div>
 				<h3 class="article__heading article__heading--small">30 Years of Experience</h3>
 				<div class="article__text">
-					<p>Nowadays Bike City is one of the largest retail and online merchants in Europe with about 60 employees, 4000 square meters (43040ft²) space and 3 buildings. We ship about 30.000 parcels worldwide annually and offer expert service</p>
+					<p>
+						Nowadays Bike City is one of the largest retail and online merchants in Europe with about 60 employees, 4000 square meters (43040ft²)
+						space and 3 buildings. We ship about 30.000 parcels worldwide annually and offer expert service
+					</p>
 				</div>
-				<div class="image-wrapper"><img alt="Biker on a mountain" class="image article__image" src=<%=require('/src/assets/images/about.jpg').default %>></div>
+				<div class="image-wrapper">
+					<img alt='Biker on a mountain' class='image article__image' src=<%=require('/src/assets/images/about.jpg').default %> >
+				</div>
 			</section>
 			<section class="article__section">
 				<h3 class="article__heading article__heading--small">Always here to help</h3>
 				<div class="article__text">
-					<p>In our huge local retail store you will find lots of bikes, parts, apparel and accessories on display, it's worth a look so please visit us once you're Near by.</p>
-					<p>One of the annual highlights is our Testival, a bike event where lots of new products are presented by the manufacturers and distributors. Not only are the products shown, but we want the customers to test these goods and give us feedback so we can sell what our customers need!</p>
+					<p>
+						In our huge local retail store you will find lots of bikes, parts, apparel and accessories on display, it's worth a look so please visit
+						us once you're Near by.
+					</p>
+					<p>
+						One of the annual highlights is our Festival, a bike event where lots of new products are presented by the manufacturers and
+						distributors. Not only are the products shown, but we want the customers to test these goods and give us feedback so we can sell what
+						our customers need!
+					</p>
 					<p>Bike City wants you to enjoy one of the greatest hobbies in the world and would love to provide you with the required products!</p>
 				</div>
 			</section>
 		</article>
 
-		<article id="contact" class="article contact">
+		<article class="article contact" id="contact">
 			<h2 class="article__title">Contact</h2>
 			<section class="article__section">
 				<h3 class="article__heading article__heading--small">Question <em class="emphasis">everything.</em></h3>
@@ -159,26 +189,29 @@
 				<div class="article__text">
 					<p>You can’t be the best if you dont ask questions! We reply to everyone.</p>
 				</div>
-				<form class="form" action="" method="POST">
-					<input class="form__input" type="text" placeholder="name" />
-					<input class="form__input" type="email" placeholder="email *" required />
-					<input class="form__input form__textarea" type="textarea" placeholder="message *" required />
+				<form action="" class="form" method="POST">
+					<label for="name">Name</label>
+					<input class="form__input" id="name" placeholder="name" type="text" />
+					<label for="email">Email</label>
+					<input class="form__input" id="email" placeholder="email *" required type="email" />
+					<label for="message">Message</label>
+					<input class="form__input form__textarea" id="message" placeholder="message *" required type="text" />
 					<input class="form__button" type="submit" value="Submit" />
 				</form>
 			</section>
 		</article>
 
 		<footer class="footer">
+			<a class="logo logo--small" href="/">Bike<span class="logo--em">City</span></a>
 			<div class="footer__legal">
-				<a href="/" class="logo logo--small">Bike<span class="logo--em">City</span></a>
-				<p>
-					&copy;
-					<script>document.write(new Date().getFullYear())</script> All rights reserved.
-				</p>
+				&copy;
+				<span id="footer-date"> </span>
+				All rights reserved.
 			</div>
-			<p class="footer__developer">by <a href="https://github.com/markonikolas" class="link" target="blank" rel="noreferer">n1c01ash</a>
+			<p class="footer__developer">
+				by
+				<a class="link" href="https://github.com/markonikolas" rel="noreferer" target="blank">n1c01ash</a>
 			</p>
 		</footer>
 	</body>
-
 </html>

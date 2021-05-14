@@ -6,7 +6,7 @@
 		background: #FFF
 		margin: 40px 0 0
 
-		@include breakpoint(375px)
+		@include breakpoint(small)
 			font-size: 60px
 
 	&__section
@@ -33,7 +33,7 @@
 				top: 82%
 			
 			& .article__heading
-				@include breakpoint(375px)
+				@include breakpoint(small)
 					font-size: 95px
 					margin-bottom: 25px
 
@@ -44,7 +44,7 @@
 		margin: 0
 		color: $brand-dark
 
-		@include breakpoint(375px)
+		@include breakpoint(small)
 			font-size: 145px
 			line-height: 160px
 			color: lighten($mid-grey, 60%)
@@ -58,11 +58,11 @@
 			line-height: 27px
 			margin-top: 35px
 
-			@include breakpoint(375px)
+			@include breakpoint(small)
 				color: $mid-grey
 				padding-top: 50px
 
-			@include breakpoint(411px)
+			@include breakpoint(medium)
 				margin-top: 85px
 
 	&__subheading
@@ -73,7 +73,7 @@
 		margin: 0
 		color: $mid-grey
 
-		@include breakpoint(375px)
+		@include breakpoint(small)
 			font-size: 24px
 			margin-bottom: 10px
 			word-wrap: break-word
@@ -113,7 +113,7 @@
 		transition: 200ms all ease-in-out
 
 
-		@include breakpoint(411px)
+		@include breakpoint(medium)
 			top: 80px
 			width: 120px
 			height: 42px

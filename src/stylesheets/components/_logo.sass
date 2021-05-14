@@ -1,17 +1,24 @@
 .logo
-	color: #FFF
+	color: $white
 	font-family: $logo-font-stack
-	font-size: 48px
-	line-height: 51px
+	font-size: 3rem
+	line-height: 1
+	padding: 0 0.25rem
+
+	@extend %outline
+	@extend %outline--yellow
+
+	&:focus
+		color: $white
+		text-decoration: none
 
 	&--em
 		text-transform: uppercase
 		color: $brand-yellow
 
 	&--small
-		font-size: 36px
-		margin: 10px 0
+		font-size: 2.2rem
 
 	&:hover
 		text-decoration: none
-		color: #fff
+		color: $white

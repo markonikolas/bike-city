@@ -8,5 +8,24 @@
 	left: 0
 	height: 5px
 	width: 100%
-	
-	background: #fff
+	background: $white
+
+%fadein
+	@keyframes fade
+		0%
+			opacity: 0
+		100%
+			opacity: 1
+
+	animation: fade 300ms ease-in-out 1 forwards
+
+%outline
+	outline: transparent dotted 1px
+
+%outline--yellow
+	&:focus
+		outline: $brand-yellow dotted 1px
+
+%outline--dark
+	&:focus
+		outline: $brand-dark dotted 1px
