@@ -6,10 +6,6 @@
 	background: linear-gradient(105.9deg, $brand-yellow 40%, rgba(255, 255, 255, 0) 150%), url('/src/assets/images/hero.jpg') no-repeat left
 	background-size: cover
 
-	&.hero--active
-		background: linear-gradient(105.9deg, $brand-dark 70%, rgba(255, 255, 255, 0) 150%), url('/src/assets/images/hero.jpg') no-repeat left
-		background-size: cover
-
 	&__title
 		flex: 1
 		padding: $v-padding
@@ -17,10 +13,7 @@
 		font-size: 3.2rem
 		line-height: 1.5ch
 		color: $brand-dark
-		transition: transform 500ms ease
-
-		@include breakpoint(small)
-			font-size: 4.6rem
+		@extend %default-transition
 
 	&__explore
 		display: flex
@@ -32,14 +25,13 @@
 		z-index: 9
 		letter-spacing: 0.05em
 		background: $white
-		transition: transform 250ms ease
 		clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0 100%)
+		@extend %default-transition
 
 		@include breakpoint(small)
 			font-size: 1.2rem
 
 		.link
-			@extend %outline
 			@extend %outline--dark
 
 		.arrow

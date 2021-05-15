@@ -1,6 +1,8 @@
+// Dimensions
 %body-padding
 	padding: $body-padding
 
+// Elements
 %line
 	position: absolute
 	content: ''
@@ -9,6 +11,10 @@
 	height: 5px
 	width: 100%
 	background: $white
+
+// Transitions and animations
+%default-transition
+	transition: all 500ms ease
 
 %fadein
 	@keyframes fade
@@ -19,13 +25,18 @@
 
 	animation: fade 300ms ease-in-out 1 forwards
 
+// Outlines
 %outline
 	outline: transparent dotted 1px
 
 %outline--yellow
+	@extend %outline
+
 	&:focus
 		outline: $brand-yellow dotted 1px
 
 %outline--dark
+	@extend %outline
+
 	&:focus
 		outline: $brand-dark dotted 1px
