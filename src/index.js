@@ -33,10 +33,8 @@ $(() => {
 
 	$('#menu').on('click', function () {
 		const $nav = $(this).siblings('.nav')
-		const $hero = $('#hero')
 
 		$nav.toggleClass('nav--open')
-		$hero.toggleClass('hero--active')
 
 		// Toggle main navigation
 		$(this).toggleClass('menu--open')
