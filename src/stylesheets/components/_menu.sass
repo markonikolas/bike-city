@@ -3,19 +3,22 @@
 .menu
 	$scale: 0.3125rem
 
+	box-sizing: content-box
 	display: flex
 	flex-direction: column
 	justify-content: space-between
-
 	width: 2.5rem
 	height: 1.5rem
-	transform: scale(0.85)
-
+	padding: $scale
+	margin-right: calc(-0.1rem - #{$scale})
+	transform: scale(0.8)
 	cursor: pointer
-	padding: 0.3125rem
-	box-sizing: content-box
+	@extend %default-transition
+	+on-event
+		outline: none
 
-	@extend %outline--yellow
+	@include breakpoint(large)
+		display: none
 
 	&::before,
 	&::after
@@ -23,6 +26,10 @@
 		height: $scale
 		background-color: $white
 		border-radius: $scale
+
+	&:focus::before,
+	&:focus::after
+		background-color: $brand-yellow
 
 	&--open
 		$rotation: -45deg

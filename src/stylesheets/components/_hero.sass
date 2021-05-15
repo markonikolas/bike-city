@@ -1,19 +1,29 @@
 .hero
 	display: flex
 	flex-direction: column
-	height: $screen-height--no-header
+	height: $screen-height
 	font-family: 'Cabin', sans-serif
 	background: linear-gradient(105.9deg, $brand-yellow 40%, rgba(255, 255, 255, 0) 150%), url('/src/assets/images/hero.jpg') no-repeat left
 	background-size: cover
+	background-position: top
+	padding:  $header-height 0 0
+
+	@include breakpoint(small)
+		padding: $header-height--large 0 0
 
 	&__title
 		flex: 1
-		padding: $v-padding
-		margin: 0
-		font-size: 3.2rem
+		width: 100%
 		line-height: 1.5ch
 		color: $brand-dark
+		max-width: 100%
+		font-size: 10.5vh
+		padding-top: 0
+		padding-bottom: 0
+		margin: 0.8em 0 0
+		@extend %max-site-width
 		@extend %default-transition
+		@extend %body-padding
 
 	&__explore
 		display: flex
@@ -28,11 +38,12 @@
 		clip-path: polygon(0 45%, 100% 0%, 100% 100%, 0 100%)
 		@extend %default-transition
 
+		.link
+			+on-event
+				outline: none
+
 		@include breakpoint(small)
 			font-size: 1.2rem
-
-		.link
-			@extend %outline--dark
 
 		.arrow
 			position: relative
@@ -40,10 +51,12 @@
 			@keyframes hover
 				0%
 					transform: translateY(0)
+					background-color: $brand-dark
 				100%
-					transform: translateY(10px)
+					transform: translateY(0.2em)
+					background-color: darken($white, 25%)
 
-			animation: hover 3500ms ease-in-out infinite alternate
+			animation: hover 3000ms ease-in-out infinite alternate
 
 			&::before,
 			&::after
@@ -51,7 +64,7 @@
 				position: absolute
 				display: block
 				bottom: -0.75em
-				background: $brand-dark
+				background: inherit
 				width: 0.6rem
 				height: 0.25rem
 				border-radius: 0.15rem

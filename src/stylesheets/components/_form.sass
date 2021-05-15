@@ -2,10 +2,10 @@
 	display: flex
 	flex-direction: column
 	justify-content: space-between
-	height: 390px
+	height: 25rem
 
 	&__input
-		padding-left: 25px
+		padding-left: 1.5rem
 		color: $mid-grey
 
 	&__button
@@ -16,11 +16,11 @@
 		&:hover
 			background: $mid-grey
 			color: $brand-yellow
-			transition: 200ms all ease-in-out
+			@extend %default-transition
 
 	&__input, &__button
-		height: 58px
+		height: 3.625rem
 		border: none
 
 	&__textarea
-		height: 108px
+		height: 6.75rem

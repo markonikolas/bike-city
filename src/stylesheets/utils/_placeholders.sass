@@ -2,15 +2,8 @@
 %body-padding
 	padding: $body-padding
 
-// Elements
-%line
-	position: absolute
-	content: ''
-	display: block
-	left: 0
-	height: 5px
-	width: 100%
-	background: $white
+%max-site-width
+	max-width: $site-width
 
 // Transitions and animations
 %default-transition
@@ -24,19 +17,3 @@
 			opacity: 1
 
 	animation: fade 300ms ease-in-out 1 forwards
-
-// Outlines
-%outline
-	outline: transparent dotted 1px
-
-%outline--yellow
-	@extend %outline
-
-	&:focus
-		outline: $brand-yellow dotted 1px
-
-%outline--dark
-	@extend %outline
-
-	&:focus
-		outline: $brand-dark dotted 1px

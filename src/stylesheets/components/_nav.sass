@@ -3,7 +3,7 @@
 	display: none
 	flex-direction: column
 	align-items: flex-start
-	justify-content: space-between
+	justify-content: space-evenly
 	width: 100%
 	position: absolute
 	top: $header-height
@@ -12,20 +12,46 @@
 	z-index: 99
 	overflow: hidden
 
+	@include breakpoint(medium)
+		padding-top: 4em
+		justify-content: flex-start
+
+	@include breakpoint(large)
+		position: static
+		display: flex
+		flex-direction: row
+		justify-content: flex-end
+		align-items: center
+		padding: 0
+
 	&__link
+		$x-padding: 0.5rem
 		@extend %default-transition
 		font-weight: bold
 		font-size: 2.5rem
+		padding: 0.25em $x-padding
+		margin-left: -$x-padding
 		letter-spacing: -0.02em
 		color: $white
 
-		&:hover
+		+on-event
 			color: $brand-yellow
 			text-decoration: none
+			outline: none
+
+		@include breakpoint(medium)
+			font-size: 1.85rem
+			margin-bottom: 30px
+
+		@include breakpoint(large)
+			font-size: 1.5rem
+			margin-bottom: 0
+			margin-right: -$x-padding
+			&:not(:last-of-type)
+				margin-right: 0.875rem
 
 	&--open
 		@extend %fadein
 		display: flex
 		height: $screen-height--no-header
-		padding: 4rem $v-padding
 		background-color: $brand-dark

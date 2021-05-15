@@ -4,30 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+		<meta name="description" content="Welcome to Bike City, a perfect place for you and your ride!">
 		<title>Bike City - Find your dream ride</title>
 	</head>
 
 	<body>
 		<header class="header">
-			<a class="logo" href="/">Bike<span class="logo--em">City</span></a>
-			<div class="menu" id="menu" tabindex="0"></div>
-			<nav class="nav header__nav">
-				<a class="nav__link" href="/">Home</a>
-				<a class="nav__link" href="#shop">Shop</a>
-				<a class="nav__link" href="#blog">Blog</a>
-				<a class="nav__link" href="#about">About</a>
-				<a class="nav__link" href="#contact">Contact</a>
-				<div class="locales">
-					<span class="locale locale--active">EN</span>
-					<a class="locale" href="/sr">SR</a>
-				</div>
-			</nav>
+			<div class='wrapper header__wrapper'>
+				<a class="logo" href="/en">Bike<span class="logo--em">City</span></a>
+				<div class="menu" id="menu" tabindex="0"></div>
+				<nav class="nav header__nav">
+					<a class="nav__link" href="/">Home</a>
+					<a class="nav__link" href="#shop">Shop</a>
+					<a class="nav__link" href="#blog">Blog</a>
+					<a class="nav__link" href="#about">About</a>
+					<a class="nav__link" href="#contact">Contact</a>
+				</nav>
+			</div>
 		</header>
 
 		<article class="hero" id="hero">
 			<h1 class="hero__title" id="hero-title">Easy way to find your dream ride.</h1>
 			<div class="hero__explore">
-				<a href="#shop" id="explore" class="link link--dark"> explore </a>
+				<a href="#shop" id="explore" class="link link--dark">explore</a>
 				<span class="arrow"></span>
 			</div>
 		</article>
@@ -46,7 +46,8 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img alt='Trail Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-1.png').default %> >
+					<img alt='Trail Bike by Santa Cruz' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/shop-bike-1.png').default
+					     %> >
 				</div>
 
 				<button class="article__button">Order</button>
@@ -63,7 +64,8 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img alt='Cross Country Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
+					<img alt='Cross Country Bike by Santa Cruz' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/shop-bike-3.png').default
+					     %> >
 				</div>
 
 				<button class="article__button">Order</button>
@@ -80,7 +82,7 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img alt='MTB Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
+					<img alt='MTB Bike by Santa Cruz' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
 				</div>
 
 				<button class="article__button">Order</button>
@@ -97,7 +99,7 @@
 				</ul>
 
 				<div class="image-wrapper">
-					<img alt='Downhill Bike by Santa Cruz' class='image article__image' src=<%=require('/src/assets/images/shop-bike-2.png').default %> >
+					<img alt='Downhill Bike by Santa Cruz' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/shop-bike-2.png').default %> >
 				</div>
 
 				<button class="article__button">Order</button>
@@ -108,7 +110,7 @@
 			<h2 class="article__title">Blog</h2>
 			<section class="article__section">
 				<div class="image-wrapper">
-					<img alt='Biker on a mountain' class='image article__image' src=<%=require('/src/assets/images/blog-choose-wisely.jpg').default %> >
+					<img alt='Biker on a mountain' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/blog-choose-wisely.jpg').default %> >
 				</div>
 				<h3 class="article__heading article__heading--small">Choose wisely.</h3>
 				<div class="article__text">
@@ -128,7 +130,7 @@
 			</section>
 			<section class="article__section" id="size">
 				<div class="image-wrapper">
-					<img alt='Biker on a mountain' class='image article__image' src=<%=require('/src/assets/images/blog-size-matters.jpg').default %> >
+					<img alt='Biker on a mountain' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/blog-size-matters.jpg').default %> >
 				</div>
 				<h3 class="article__heading article__heading--small">Size matters.</h3>
 				<div class="article__text">
@@ -161,7 +163,7 @@
 					</p>
 				</div>
 				<div class="image-wrapper">
-					<img alt='Biker on a mountain' class='image article__image' src=<%=require('/src/assets/images/about.jpg').default %> >
+					<img alt='Biker on a mountain' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/about.jpg').default %> >
 				</div>
 			</section>
 			<section class="article__section">
@@ -205,12 +207,12 @@
 			<a class="logo logo--small" href="/">Bike<span class="logo--em">City</span></a>
 			<div class="footer__legal">
 				&copy;
-				<span id="footer-date"> </span>
+				<span id="footer-date">2021</span>
 				All rights reserved.
 			</div>
 			<p class="footer__developer">
 				by
-				<a class="link" href="https://github.com/markonikolas" rel="noreferer" target="blank">n1c01ash</a>
+				<a class="link" href="https://github.com/markonikolas" rel="norefereri noopener" target="_blank">n1c01ash</a>
 			</p>
 		</footer>
 	</body>
