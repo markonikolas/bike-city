@@ -13,6 +13,9 @@ All notable changes to this project will be documented in this file.
 - Update gitignore
 - Fix webpack not exporting assets
 
+### Removed
+- Removed locales
+
 ## [2.0.2] - 21-04-06
 ### Fixed
 - Fix rwd issues
