@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update hero responsivness
 - Update pixel units with dynamic values
 - Update links to be usable on keyboard
 - Update asset generation
