@@ -4,7 +4,8 @@
 	@include breakpoint(large)
 		display: grid
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
-		grid-gap: 2em
+		gap: 2em
+		padding: 5em 2.5rem
 
 	&__title
 		@extend .wrapper
@@ -31,20 +32,14 @@
 		box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25)
 		clip-path: polygon(0 2%, 100% 0, 100% 95%, 0% 98%)
 
+		@include breakpoint(large)
+			padding-bottom: 0
+
 		&:nth-of-type(2n)
 			clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 95%)
-		//	& .article__image
-		//		transform: scaleX(-1) translateX(50%)
-		//
-		//	& .article__button
-		//		position: absolute
-		//		right: 1.875em
-		//		top: 82%
-		//
-		//	& .article__heading
-		//		@include breakpoint(small)
-		//			font-size: 6rem
-		//			margin-bottom: 2.5em
+
+			.image-wrapper::after
+				clip-path: polygon(0px 1.85%, 100% 10%, 100% 100%, 0% 97%)
 
 	&__heading
 		font-weight: 600
@@ -90,6 +85,9 @@
 	&__image
 		@extend %center-x
 		width: 90vw
+
+		@include breakpoint(large)
+			width: unset
 
 	&__bullets
 		display: none
