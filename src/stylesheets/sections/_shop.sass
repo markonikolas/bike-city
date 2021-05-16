@@ -18,17 +18,17 @@
 		@include breakpoint(large)
 			padding-bottom: 0
 
-		&:nth-of-type(2n)
-			clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 95%)
-
-			.image-wrapper::after
-				clip-path: polygon(0px 1.85%, 100% 10%, 100% 100%, 0% 97%)
-
-			& .article__button
-				transform: matrix(1, 0.05, 0, 1, 0, 0)
-
-				@include breakpoint(large)
-					bottom: 2.5em
+		//&:nth-of-type(2n)
+		//	clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 95%)
+		//
+		//	.image-wrapper::after
+		//		clip-path: polygon(0px 1.85%, 100% 10%, 100% 100%, 0% 97%)
+		//
+		//	& .article__button
+		//		transform: matrix(1, 0.05, 0, 1, 0, 0)
+		//
+		//		@include breakpoint(large)
+		//			bottom: 2.5em
 
 	.article__heading
 		@include breakpoint(small)
