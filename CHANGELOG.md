@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update shop layout responsivness
 - Update footer markup
 - Update hero responsivness
 - Update pixel units with dynamic values
@@ -17,6 +18,9 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 - Removed locales
+
+### Added
+- Added button for toggling product specifications
 
 ## [2.0.2] - 21-04-06
 ### Fixed

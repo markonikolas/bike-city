@@ -27,14 +27,8 @@
 			& .article__button
 				transform: matrix(1, 0.05, 0, 1, 0, 0)
 
-				@include breakpoint(medium)
-					right: 2em
-					position: absolute
-
 				@include breakpoint(large)
-					left: 2em
 					bottom: 2.5em
-
 
 	.article__heading
 		@include breakpoint(small)
@@ -42,6 +36,7 @@
 
 	.article__button
 		bottom: 2em
+		margin-right: 0.5em
 
 		@include breakpoint(medium)
 			font-size: 2rem
@@ -50,7 +45,7 @@
 			font-size: 1.5rem
 
 	.article__image
-		top: 2.5em
+		top: 4.5em
 
 		@include breakpoint(large)
 			width: 110%
