@@ -45,6 +45,7 @@ $(() => {
 
 	$('#explore').on('click', (e) => scrollToArticle(e))
 	$('.nav__link').on('click', (e) => scrollToArticle(e))
+	$('#size').on('click', (e) => scrollToArticle(e))
 
 	$('#footer-date').html(new Date().getFullYear().toString())
 

@@ -3,26 +3,33 @@
 	.article
 		&__section
 			height: unset
-			padding-bottom: 60px
+			padding: 0 0 $h-padding * 2.5
 
 		&__image
-			width: 120vw
-			clip-path: polygon(0 0%, 100% 6%, 100% 87%, 0% 98%) 
-			margin-top: -25px
+			clip-path: polygon(0px 0%, 100.00% -0.17%, 100% 87%, 0% 98%)
 
 		&__heading
-			margin-top: unset
-			font-size: 32px
-
-			@include breakpoint(small)
-				font-size: 42px !important
-				margin-bottom: 30px
+			margin: 0.5em 0
+			font-size: 2rem
+			padding: 0 $v-padding
 
 		&__text
-			@include breakpoint(small)
-				font-size: 16px
-				line-height: 1.618
+			padding: 0 $v-padding
+			text-align: left
 
+			@include breakpoint(small)
+				font-size: 1rem
+				line-height: 1.618
+	.wrapper
+		padding: 0
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+		gap: 2em
+
+		@include breakpoint(medium)
+			margin: 0 auto
+			padding: $body-padding
+			max-width: $site-width
 
 	.emphasis
 		color: $brand-dark
@@ -30,10 +37,7 @@
 		text-decoration: underline
 		
 	.image-wrapper
-		height: 280px
-
-		@include breakpoint(medium)
-			margin-bottom: 50px
+		width: 100%
 
 		&::after
 			display: none
