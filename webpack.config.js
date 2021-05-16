@@ -81,7 +81,7 @@ module.exports = env => {
 				},
 			},
 			{
-				test: /\.(png|jpe?g|svg)$/i,
+				test: /\.(png|jpe?g|svg|webp)$/i,
 				loader: 'image-webpack-loader',
 				options: {
 					enforce: 'pre',
@@ -100,7 +100,7 @@ module.exports = env => {
 				},
 			},
 			{
-				test: /\.(png|jpe?g)$/i,
+				test: /\.(png|jpe?g|webp)$/i,
 				loader: 'url-loader',
 				options: {
 					name: `${BUILD_ASSETS_DIR}/images/${assetFilename}.[ext]`,

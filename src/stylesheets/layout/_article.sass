@@ -1,10 +1,18 @@
 .article
 	padding-top: 5em
 
+	@include breakpoint(large)
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+		grid-gap: 2em
+
 	&__title
-		padding: 0 $v-padding
-		font-size: 2.5rem
+		@extend .wrapper
+		grid-column: -1 / 1
+		margin: 0.6em 0
+		font-size: 3.5rem
 		background: $white
+		color: $brand-dark
 
 		@include breakpoint(small)
 			font-size: 3.75rem
@@ -13,40 +21,41 @@
 		@extend %body-padding
 		position: relative
 		width: 100%
-		padding-top: 0.625em
+		padding-top: 2em
 		padding-bottom: 1.25em
 		margin-bottom: 2.5em
-		min-height: 37.5rem
+		min-height: 25rem
 		overflow: hidden
 		color: $mid-grey
 		background-color: $dim-grey
 		box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25)
-		clip-path: polygon(0 2%, 100% 0%, 100% 95%, 0% 98%)
+		clip-path: polygon(0 2%, 100% 0, 100% 95%, 0% 98%)
 
 		&:nth-of-type(2n)
-			& .article__image
-				transform: scaleX(-1) translateX(50%)
-
-			& .article__button
-				position: absolute
-				right: 1.875em
-				top: 82%
-			
-			& .article__heading
-				@include breakpoint(small)
-					font-size: 6rem
-					margin-bottom: 2.5em
+			clip-path: polygon(0 0, 100% 2%, 100% 98%, 0% 95%)
+		//	& .article__image
+		//		transform: scaleX(-1) translateX(50%)
+		//
+		//	& .article__button
+		//		position: absolute
+		//		right: 1.875em
+		//		top: 82%
+		//
+		//	& .article__heading
+		//		@include breakpoint(small)
+		//			font-size: 6rem
+		//			margin-bottom: 2.5em
 
 	&__heading
 		font-weight: 600
-		font-size: 3.45rem
-		line-height: 4.875rem
+		font-size: 3rem
+		line-height: 3rem
 		margin: 0
 		color: $brand-dark
 
 		@include breakpoint(small)
-			font-size: 9rem
-			line-height: 10rem
+			font-size: 4.2rem
+			line-height: 5rem
 			color: lighten($mid-grey, 60%)
 
 		&--last
@@ -74,15 +83,13 @@
 		color: $mid-grey
 
 		@include breakpoint(small)
-			font-size: 1.5rem
+			font-size: 1rem
 			margin-bottom: 0.625em
 			word-wrap: break-word
 
 	&__image
+		@extend %center-x
 		width: 90vw
-		position: absolute
-		left: 50%
-		transform: translateX(-50%)
 
 	&__bullets
 		display: none
@@ -98,6 +105,7 @@
 		box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.25)
 		border: none
 		position: relative
+		bottom: 3.125em
 		z-index: 2
 		width: 5.3em
 		height: 2.2em
@@ -108,13 +116,7 @@
 		letter-spacing: 0.01em
 		text-transform: uppercase
 		cursor: pointer
-		top: 1.25em
 		@extend %default-transition
-
-		@include breakpoint(medium)
-			top: 5em
-			width: 7.5em
-			height: 2.6em
 
 		@include skew()
 
