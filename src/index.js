@@ -47,4 +47,16 @@ $(() => {
 	$('.nav__link').on('click', (e) => scrollToArticle(e))
 
 	$('#footer-date').html(new Date().getFullYear().toString())
+
+	$('.article__button.specs').on('click', function() {
+		const $this = $(this);
+		const $container = $this.siblings('.article__bullets');
+
+		$this.html('Hide Specs');
+		if($container.hasClass('article__bullets--open')) {
+			$this.html('Show Specs');
+		}
+
+		$container.toggleClass('article__bullets--open');
+	})
 })

@@ -17,6 +17,8 @@
 
 	&__section
 		@extend %body-padding
+		display: flex
+		flex-wrap: wrap
 		position: relative
 		width: 100%
 		padding-top: 2em
@@ -78,13 +80,19 @@
 			width: unset
 
 	&__bullets
-		display: none
+		opacity: 0
+		list-style: none
+		@extend %default-transition
+
+		&--open
+			opacity: 1
 
 	&__text
 		font-weight: 400
-		font-size: 0.875rem
 		line-height: 1.25rem
-		opacity: 0.95
+		font-size: 0.775rem
+		margin-left: auto
+		text-align: right
 
 	&__button
 		background: $brand-yellow
