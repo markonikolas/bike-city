@@ -2,13 +2,13 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-### Update
+### Changed
 - Update sr template
 
-### Add
+### Added
 - Add language switcher
 
-### Fix
+### Fixed
 - Fix loading stutter
 
 ## [2.1.1] - 2021-04-18
@@ -32,7 +32,7 @@ All notable changes to this project will be documented in this file.
 - Update asset export with csspurge
 - Update gitignore
 
-### Fix
+### Fixed
 - Fix webpack not exporting assets
 
 ### Removed
