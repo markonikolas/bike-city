@@ -39,6 +39,20 @@
 			&:not(:last-of-type)
 				margin-right: 0.875rem
 
+		&--active
+			color: $brand-yellow
+
+	&__lang
+		display: flex
+		margin-right: 0.875rem
+
+		& .nav__link
+			color: $brand-yellow
+			cursor: pointer
+
+			&:not(.nav__link--active)
+				display: none
+
 	&--open
 		@extend %fadein
 		display: flex
