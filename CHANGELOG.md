@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.2.1] - 2021-05-19
+### Fixed
+- Fix Changelog typos
+
 ## [2.2.0] - 2021-05-19
 ### Changed
 - Update buttons for multiple languages
@@ -12,11 +16,11 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fix loading stutter
 
-## [2.1.1] - 2021-04-18
+## [2.1.1] - 2021-05-18
 ### Fixed
 - Fix Changelog typos
 
-## [2.1.0] - 2021-04-18
+## [2.1.0] - 2021-05-18
 ### Changed
 - Update contact layout responsiveness
 - Update about layout responsiveness
