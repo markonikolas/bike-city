@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Added button for toggling product specifications
+- Add new breakpoints
 
 ## [2.0.2] - 21-04-06
 ### Fixed
