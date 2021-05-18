@@ -1,58 +1,225 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Bike City - Find your dream ride</title>
-	</head>
+	<meta name="description" content="Welcome to Bike City, a perfect place for you and your ride!">
+	<title>Bajs Grad - Pronadji bajs iz snova!</title>
+</head>
 
-	<body>
-		<header class="header">
-			<a href="/" class="logo">Bike<span class="logo--em">Grad</span></a>
-			<div id="menu" class="menu header__menu">
-				<span class="menu__line"></span>
-			</div>
+<body>
+	<header class="header">
+		<div class='wrapper header__wrapper'>
+			<a class="logo" href="/en">Bajs<span class="logo--em">Grad</span></a>
+			<div class="menu" id="menu" tabindex="0"></div>
 			<nav class="nav header__nav">
-				<a href="/">Početna</a>
-				<a href="#shop">Prodavnica</a>
-				<a href="/blog">Blog</a>
-				<a href="#about">O nama</a>
-				<a href="#contact">Kontakt</a>
+				<a class="nav__link" href="/">Kuća</a>
+				<a class="nav__link" href="#shop">Prodavnica</a>
+				<a class="nav__link" href="#blog">Blog</a>
+				<a class="nav__link" href="#about">O nama</a>
+				<a class="nav__link" href="#contact">Kontakt</a>
 			</nav>
-		</header>
+		</div>
+	</header>
 
-		<article class="hero">
-			<h1 class="hero__title">Najlakši način da nadjete bicikl iz snova.
-			</h1>
-			<div class="hero__clip-path">
-				<a href="#shop" class="hero__explore link link--dark">Istraži</a>
+	<article class="hero" id="hero">
+		<h1 class="hero__title" id="hero-title">Jednostavan način da pronadješ bajs iz snova.</h1>
+		<div class="hero__explore">
+			<a href="#shop" id="explore" class="link link--dark">istraži</a>
+			<span class="arrow"></span>
+		</div>
+	</article>
+
+	<article class="article shop" id="shop">
+		<h2 class="article__title">Prodavnica</h2>
+
+		<div class="wrapper">
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading">Trail</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text article__bullets">
+					<li>Pomeranje Amortizera <strong>120 - 140mm</strong></li>
+					<li>Ugao glave cevii <strong>67 - 69&deg;</strong></li>
+					<li>Tip rama <strong>Karbonski</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img alt='Trail Bike by Santa Cruz' class='image article__image' loading='lazy'
+					     src=<%=require('/src/assets/images/shop-bike-1.png').default %> >
+				</div>
+				<div class='article__buttons'>
+					<button class="article__button">Poruči</button>
+					<button class="article__button article__button--light specs">Prikaži više</button>
+				</div>
+			</section>
+
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading">X Country</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text article__bullets">
+					<li>Pomeranje Amortizera <strong>100 - 132mm</strong></li>
+					<li>Ugao glave cevii <strong>67 - 72&deg;</strong></li>
+					<li>Tip rama <strong>Aluminiumski</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img alt='Cross Country Bike by Santa Cruz' class='image article__image' loading='lazy'
+					     src=<%=require('/src/assets/images/shop-bike-2.png').default %> >
+				</div>
+
+				<div class='article__buttons'>
+					<button class="article__button">Poruči</button>
+					<button class="article__button article__button--light specs">Prikaži više</button>
+				</div>
+			</section>
+
+			<section class="article__section">
+				<div>
+					<h3 class="article__heading">MTB</h3>
+					<h4 class="article__subheading">Santa Cruz</h4>
+				</div>
+				<ul class="article__text article__bullets">
+					<li>Pomeranje Amortizera <strong>112 - 128mm</strong></li>
+					<li>Ugao glave cevi <strong>58 - 66&deg;</strong></li>
+					<li>Tip rama <strong>Mešovit</strong></li>
+				</ul>
+
+				<div class="image-wrapper">
+					<img alt='MTB Bike by Santa Cruz' class='image article__image' loading='lazy'
+					     src=<%=require('/src/assets/images/shop-bike-3.png').default %> >
+				</div>
+
+				<div class='article__buttons'>
+					<button class="article__button">Poruči</button>
+					<button class="article__button article__button--light specs">Prikaži više</button>
+				</div>
+			</section>
+		</div>
+
+	</article>
+
+	<article class="article blog" id="blog">
+		<h2 class="article__title">Blog</h2>
+		<div class="wrapper">
+			<section class="article__section">
+				<div class="image-wrapper">
+					<img alt='Biker on a mountain' class='image article__image' loading='lazy'
+					     src=<%=require('/src/assets/images/blog-choose-wisely.jpg').default %> >
+				</div>
+				<h3 class="article__heading article__heading--grey">Biraj pažljivo</h3>
+				<div class="article__text">
+					<p>Da bismo lakše pronašli odgovor na ovo pitanje, osvrnućemo se na određene segmente koji su važni za dato izdanje.</p>
+					<p>
+					Prvi segment koji ćemo razmotriti je zapravo odgovor na pitanje „Koja vrsta bicikla mi odgovara?“, tj. Koju vrstu bajsa preferiraš.
+					Bez obzira da li ćeš bicikl koristiti samo za vožnju na posao ili vožnju sa stilom po gradu, da li ćeš voziti brdske trke,  ili možda
+					koristiš bicikl za duže rekreativne vožnje radi boljeg zdravlja, za svaku od ovih svrha postoji bicikl dizajniran upravo za takve
+					stilove vožnje.
+					</p>
+					<p>
+						Sledeći segment je povezan sa
+						<a class="emphasis link nav__link" href="#size">veličinom</a>
+						bajsa.
+					</p>
+				</div>
+			</section>
+			<section class="article__section" id="size">
+				<div class="image-wrapper">
+					<img alt='Biker on a mountain' class='image article__image' loading='lazy'
+					     src=<%=require('/src/assets/images/blog-size-matters.jpg').default %> >
+				</div>
+				<h3 class="article__heading article__heading--grey">Size matters.</h3>
+				<div class="article__text">
+					<p>
+					Kao zasebnu temu izdvajamo veličinu okvira za bicikl, s obzirom na to da je okvir u osnovi ono što bicikl nosi,
+					ali i biciklista, pa ćete se složiti da znate još nekoliko detalja o njemu. U prodavnici možete videti specifikacije sa listom veličina,
+					tipom okvira  u zavisnosti od vrste bicikla i odgovarajuće visine vozača za date veličine okvira.</p>
+				</div>
+			</section>
+		</div>
+	</article>
+
+	<article class="article about" id="about">
+		<h2 class="article__title">O Nama</h2>
+		<div class='wrapper'>
+			<section class='article__section'>
+				<h3 class="article__heading article__heading--grey">Kvalitet i Kvantitet</h3>
+				<div class="article__text">
+					<p>
+					Skoro svi zaposleni u Bajs Gradu su entuzijasti i strastveni biciklisti. Sa više od 10.000 artikala navedenih u našoj radnji svi mi
+					imamo posebne veštine dok vozimo drumske bicikle, biciklističke kros, kros trke, sve brdske, besplatne vožnje, nizbrdice, BMKS ...
+					dostupno za sve postojeće kategorije bicikala. Pitajte nas i dobićete savršeno odgovarajuće proizvode po niskim cenama!
+					</p>
+				</div>
+			</section>
+			<section class="article__section">
+				<h3 class="article__heading article__heading--grey">30 Godina Iskustva</h3>
+				<div class="article__text">
+					<p>
+						Danas je Bike Grad jedan od najvećih maloprodajnih i onlajn trgovaca u Srbiji i Evropi sa oko 60 zaposlenih, površinom od 4000
+						kvadratnih metara i 3 zgrade. Godišnje otpremimo oko 30.000 paketa i nudimo stručnu i profesionalnu uslugu.
+					</p>
+				</div>
+			</section>
+			<div class="image-wrapper">
+				<img alt='Biker on a mountain' class='image article__image' loading='lazy' src=<%=require('/src/assets/images/about.jpg').default %> >
 			</div>
-		</article>
+			<section class="article__section">
+				<h3 class="article__heading article__heading--grey">Uvek tu da pomognemo</h3>
+				<div class="article__text">
+					<p>
+						U našoj ogromnoj lokalnoj maloprodajnoj prodavnici naći ćete mnogo izloženih bicikala, delova, odeće i dodataka, vredi pogledati,
+						pa nas poseti jednom kad budeš u blizini.
+					</p>
+					<p>
+						Jedan od godišnjih vrhunaca je naš Festival, biciklistički događaj na kojem proizvođači predstavljaju mnogo novih proizvoda.
+						Proizvodi nisu samo prikazani, već želimo da kupci testiraju ovu robu i daju nam povratne informacije
+						kako bismo mogli da uočimo šta je potrebno našim kupcima!
+					</p>
+					<p>Bajs Grad ti želi da uživaš u jednom od najvećih hobija na svetu!</p>
+				</div>
+			</section>
+		</div>
+	</article>
 
-		<article id="shop" class="article shop">
-			<h2 class="article__title">Prodavnica</h2>
-		</article>
+	<article class="article contact" id="contact">
+		<h2 class="article__title">Kontakt</h2>
+		<div class='wrapper'>
+			<section class='article__section'>
+				<div class="article__animation">
+					<img class="article__having-some-trouble" src=<%=require('/src/assets/images/joey-in-trouble.gif').default %> alt='Joey: Having some
+					                                                                                                              trouble?'>
+				</div>
+				<h3 class="article__heading article__heading--small"><em class="emphasis">Kontaktiraj nas.</em></h3>
 
-		<article id="about" class="article about">
-			<h2 class="article__title">O nama</h2>
-		</article>
-
-		<article id="contact" class="article contact">
-			<h2 class="article__title">Kontakt</h2>
-		</article>
-		<footer class="footer">
-			<div class="footer__legal">
-				<a href="/" class="logo logo--small">Bike<span class="logo--em">Grad</span></a>
-				<p>
-					&copy;
-					<script>document.write(new Date().getFullYear())</script> Sva prava zadržana.
-				</p>
-			</div>
-			<p class="footer__developer">razvio <a href="https://github.com/markonikolas" class="link" target="blank" rel="noreferer">n1c01ash</a>
-			</p>
-		</footer>
-	</body>
-
+				<form action="" class="form" method="POST">
+					<label for="name">Ime</label>
+					<input class="form__input" id="name" placeholder="ime" type="text" />
+					<label for="email">Epošta</label>
+					<input class="form__input" id="email" placeholder="epošta *" required type="email" />
+					<label for="message">Poruka</label>
+					<input class="form__input form__textarea" id="message" placeholder="poruka *" required type="text" />
+					<input class="form__button" type="submit" value="Pošalji" />
+				</form>
+			</section>
+		</div>
+	</article>
+	<footer class="footer">
+		<a class="logo logo--small" href="/">Bajs<span class="logo--em">Grad</span></a>
+		<p class="footer__legal">
+			&copy;
+			<span id="footer-date">2021</span>
+			Sva prava zadržana.
+		</p>
+		<p class="footer__developer">
+			by
+			<a class="link" href="https://github.com/markonikolas" rel="noreferer noopener" target="_blank">n1c01ash</a>
+		</p>
+	</footer>
+</body>
 </html>
