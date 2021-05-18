@@ -1,6 +1,6 @@
 {
   "name": "bike-city",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Bike store for school project",
   "main": "index.js",
   "scripts": {
