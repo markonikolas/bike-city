@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [2.1.0] - 2021-04-18
 ### Changed
 - Update contact layout responsiveness
 - Update about layout responsiveness
