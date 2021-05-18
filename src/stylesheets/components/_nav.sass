@@ -1,37 +1,46 @@
 .nav
-	display: none
-	position: absolute
-	width: 100%
-	left: 0
-	bottom: 0
-	top: $header-height
-	background: $brand-dark
-	z-index: 2
+	@extend %body-padding
 
-	&__wrapper
+	@include breakpoint(medium)
+		padding-top: 4em
+		justify-content: flex-start
+
+	@include breakpoint(large)
+		position: static
 		display: flex
-		flex-direction: column
-		justify-content: space-between
-		align-items: flex-start
-		padding: 20px 40px 40px
-		height: 100%
-
-		@include breakpoint(375px)
-			padding-top: 60px
+		flex-direction: row
+		justify-content: flex-end
+		align-items: center
+		padding: 0
 
 	&__link
+		$x-padding: 0.5rem
+		@extend %default-transition
 		font-weight: bold
-		font-size: 40px
-
-		text-align: center
+		font-size: 2.5rem
+		padding: 0.25em $x-padding
+		margin-left: -$x-padding
 		letter-spacing: -0.02em
+		color: $white
 
-		color: #FFFFFF
-		transition: all 500ms ease	
-
-		&:hover
+		+on-event
 			color: $brand-yellow
 			text-decoration: none
+			outline: none
+
+		@include breakpoint(medium)
+			font-size: 1.85rem
+			margin-bottom: 30px
+
+		@include breakpoint(large)
+			font-size: 1.5rem
+			margin-bottom: 0
+			margin-right: -$x-padding
+			&:not(:last-of-type)
+				margin-right: 0.875rem
 
 	&--open
+		@extend %fadein
 		display: flex
+		height: $screen-height--no-header
+		background-color: $brand-dark

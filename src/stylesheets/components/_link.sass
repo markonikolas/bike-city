@@ -1,6 +1,6 @@
 .link
-	font-size: 14px
-	color: #fff
+	font-size: 0.875rem
+	color: $white
 
 	&:hover
 		color: lighten($brand-dark, 35%)
@@ -8,5 +8,5 @@
 	&--dark
 		color: $brand-dark
 
-		&:hover
-			color: $brand-dark
+	+on-event
+		color: $brand-dark

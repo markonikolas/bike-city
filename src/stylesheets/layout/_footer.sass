@@ -1,21 +1,21 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
-// -----------------------------------------------------------------------------
-
 .footer
 	@extend %body-padding
+
 	background: $brand-dark
-	color: #FFF
-	padding-top: 20px
-	padding-bottom: 20px
+	color: $white
 
 	&__legal
-		font-size: 12px
-		line-height: 1
-		margin: 0
-		letter-spacing: 0.2px
+		margin: 0.5em 0
+
+		font-size: 0.85em
+		letter-spacing: 0.025rem
 
 	&__developer
-		font-size: 10px
-		margin: 0
+		font-size: 0.625rem
 		text-align: right
+
+		.link
+			+on-event
+				color: $brand-yellow
+				text-decoration: none
+

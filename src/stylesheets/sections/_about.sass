@@ -1,45 +1,58 @@
+@use "sass:map"
 
 .about
-	
+
 	.article
+
 		&__section
 			height: unset
-
-			&:first-of-type
-				padding-bottom: 0
-				margin-bottom: 0
-				clip-path: polygon(0 2%, 100% 0%, 100% 100%, 0% 98%)
-				z-index: 2
-
-			&:last-of-type
-				padding-top: 60px
-				padding-bottom: 40px
-				background: $brand-yellow
-				margin-top: -40px
-				z-index: 1
+			background: unset
+			flex-flow: column nowrap
+			min-height: unset
+			gap: 1em
+			padding: 1em 2.5rem
+			@extend %max-site-width
+			margin: 0 auto
 
 		&__heading
-			font-size: 32px !important
-			margin-bottom: 20px
-			margin-top: 0
+			margin: 0
+			padding: 0
+			font-size: 2rem
+			line-height: 0.9
+			font-weight: 600
 
-			@include breakpoint(375px)
-				letter-spacing: -1px
-			
 		&__text
 			font-size: 15px
-			line-height: 1.618
+			line-height: 1.5rem
+			text-align: left
 
 		&__image
-			width: 120vw
-			clip-path: polygon(0 0%, 100% 6%, 100% 100%, 0% 98%)
-			margin-top: 30px
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center bottom
 
-			@include breakpoint(375px)
-				margin-top: -10px
+			@include breakpoint(medium)
+				object-position: center 30%
+
+	.wrapper
+		display: flex
+		flex-direction: column
+		gap: 1em
+		padding: 5em 0
+		background-color: $dim-grey
+		clip-path: polygon(0 2%, 100% 0, 100% 95%, 0% 98%)
 
 	.image-wrapper
 		height: 280px
+
+		@include breakpoint(medium)
+			height: 500px
+
+		@include breakpoint(max)
+			// sets max width to maximum breakpoint width
+			width: map.get($breakpoints, max)
+			margin: 0 auto
 
 		&::after
 			display: none

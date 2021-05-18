@@ -1,2 +1,18 @@
 .shop
-	padding-top: 80px
+
+	.wrapper
+		@extend %max-site-width
+		overflow: hidden
+		padding: 0
+		margin: 0 auto
+		gap: 2.5em
+		display: grid
+
+		@include breakpoint(regular)
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+			gap: 2em
+			padding: $body-padding
+
+		@include breakpoint(large)
+			padding: 1.5em 2.5rem
+

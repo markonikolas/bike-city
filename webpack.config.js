@@ -4,7 +4,7 @@ module.exports = env => {
 	// Env
 	const isDev = !env.production;
 	const isWatching = !!env.watch;
-	const isAnalize = !!env.analyze;
+	const isAnalyze = !!env.analyze;
 
 	// Helpers
 	const Ternary = require( './helper/Ternary' );
@@ -29,15 +29,16 @@ module.exports = env => {
 	const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 
 	const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
-	const { BundleAnalyzerPlugin } = isAnalize && require( 'webpack-bundle-analyzer' );
+	const { BundleAnalyzerPlugin } = isAnalyze && require( 'webpack-bundle-analyzer' );
 	const { SourceMapDevToolPlugin } = isDev && require( 'webpack' );
 
 	const { WebpackManifestPlugin } = !isDev && require( 'webpack-manifest-plugin' );
-	const CssMinimizerPlugin = !isDev && require( 'css-minimizer-webpack-plugin' );
 
+	const MediaQueryPlugin = require( 'media-query-plugin' );
 	// Config
 	const mode = inDevMode.check( 'development', 'production' );
-	// Fix for hmr not working properly beacuse of browserslist
+
+	// Fix for hmr not working properly because of browserslist
 	const target = 'web';
 	const devtool = false;
 	const entry = path.resolve( __dirname, APP_DIR, ENTRY_FILENAME );
@@ -45,23 +46,22 @@ module.exports = env => {
 		path: path.resolve( __dirname, BUILD_DIR ),
 		filename: inDevMode.check( 'static/scripts/[name].js', 'static/scripts/[contenthash].js' ),
 		chunkFilename: inDevMode.check( 'static/scripts/[name]', 'static/scripts/[contenthash].js' ),
-		publicPath: ''
+		publicPath: '',
 	};
 	const devServer = {
 		contentBase: path.join( __dirname, BUILD_DIR ),
 		compress: true,
 		hot: true,
-		watchContentBase: true
-
+		watchContentBase: true,
 	};
 	const watchOptions = {
 		ignored: /node_modules/,
 		aggregateTimeout: 0,
-		poll: 0
+		poll: 0,
 	};
 
 	const sourceMap = {
-		sourceMap: isDev
+		sourceMap: false,
 	};
 
 	const modules = {
@@ -69,35 +69,25 @@ module.exports = env => {
 			{
 				test: /\.js$/i,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						plugins: [
-							"@babel/plugin-syntax-dynamic-import",
-							"@babel/transform-runtime"
-						],
-						presets: [
-							"@babel/preset-env"
-						]
-					}
-				}
+				use: [ 'babel-loader' ],
 			},
+
 			{
 				test: /\.svg$/i,
 				loader: 'url-loader',
 				options: {
 					name: `${BUILD_ASSETS_DIR}/icons/${assetFilename}.[ext]`,
-					limit: inWatchMode.check( 10240, false )
-				}
+					limit: inWatchMode.check( 10240, false ),
+				},
 			},
 			{
-				test: /\.(png|jpe?g|svg)$/i,
+				test: /\.(png|jpe?g|svg|webp)$/i,
 				loader: 'image-webpack-loader',
 				options: {
 					enforce: 'pre',
 					bypassOnDebug: true,
-					limit: inWatchMode.check( 10240, false )
-				}
+					limit: inWatchMode.check( 10240, false ),
+				},
 			},
 			{
 				test: /\.(ttf|woff|woff2|otf)$/i,
@@ -106,20 +96,24 @@ module.exports = env => {
 					name: `${assetFilename}.[ext]`,
 					outputPath: 'static/fonts',
 					publicPath: '../fonts/',
-					limit: isWatching
-				}
+					limit: isWatching,
+				},
 			},
 			{
-				test: /\.(png|jpe?g)$/i,
+				test: /\.(png|jpe?g|webp|gif)$/i,
 				loader: 'url-loader',
 				options: {
 					name: `${BUILD_ASSETS_DIR}/images/${assetFilename}.[ext]`,
 					limit: inWatchMode.check( 10240, false ),
-					publicPath: '../'
-				}
-			}
+					publicPath: '../',
+				},
+			},
+		],
+	};
 
-		]
+	const chunks = {
+		normalize: 'normalize',
+		jquery: 'jquery',
 	};
 
 	const optimizationOptions = {
@@ -127,53 +121,33 @@ module.exports = env => {
 		splitChunks: {
 			chunks: 'all',
 			cacheGroups: {
-				// Imported in main.sass
 				normalize: {
-					test: /[\\/]node_modules[\\/]normalize.css[\\/]/,
-					filename: inDevMode.check( 'vendor.css', '[contenthash].css' ),
-					enforce: true
-				}
-			}
+					test: /[\\/]node_modules[\\/]normalize.css/,
+					name: inDevMode.check( `${chunks.normalize}`, '[contenthash]' ),
+					enforce: true,
+				},
+				jquery: {
+					test: /[\\/]node_modules[\\/]jquery[\\/]dist[\\/]jquery.js/,
+					name: inDevMode.check( `${chunks.jquery}`, '[contenthash]' ),
+					enforce: true,
+				},
+			},
 		},
 		minimize: !isDev,
-		minimizer: [ `...` ]
+		minimizer: !isDev ? [ `...` ] : [],
 	};
 
 	// Loader Rules
 	const styleRules = {
-		// Match anything except locale styles
-		test: /\main.s?[ac]ss$/,
+		test: /\.s?[ac]ss$/,
 		use: [
-			inWatchMode.check(
-				'style-loader',
-				MiniCssExtractPlugin.loader
-			),
+			inWatchMode.check( 'style-loader', MiniCssExtractPlugin.loader ),
 			{
 				loader: 'css-loader',
-				options: sourceMap
-			}
-		]
-	};
-
-	const localeRules = {
-		test: /\w+\_\w{2}\.s?[ac]ss$/, 
-		use: [
-			inWatchMode.check(
-				'style-loader',
-				{
-					options: {
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: '../'
-						}
-					}
-				}
-			),
-			{
-				loader: 'css-loader',
-				options: sourceMap
-			}
-		]
+				options: sourceMap,
+			},
+			MediaQueryPlugin.loader,
+		],
 	};
 
 	const optimization = inWatchMode.check( { minimize: false }, optimizationOptions );
@@ -184,35 +158,34 @@ module.exports = env => {
 		favicon: `${APP_DIR}/assets/images/favicon.png`,
 		scriptLoading: 'defer',
 		cache: true,
-		publicPath: '../'
+		publicPath: '../',
 	};
 
 	const plugins = [
 		new CleanWebpackPlugin( {
-			verbose: true
+			verbose: true,
 		} ),
 		new HTMLWebpackPlugin( {
 			template: 'src/templates/en-template.html',
 			filename: 'en/index.html',
-			...templatesCommon
+			...templatesCommon,
 		} ),
 		new HTMLWebpackPlugin( {
 			template: 'src/templates/sr-template.html',
 			filename: 'sr/index.html',
-			...templatesCommon
+			...templatesCommon,
 		} ),
 		new MiniCssExtractPlugin( {
-			filename: `${BUILD_ASSETS_DIR}/styles/${assetFilename}.css`
+			filename: `${BUILD_ASSETS_DIR}/styles/${assetFilename}.css`,
 		} ),
-		
-		new MiniCssExtractPlugin( {
-			filename: (pathData) => {
-			if(pathData.chunk.name === 'locale_en') {
-				return `en/${pathData.chunk.name}.css`
-			}
-			return `${BUILD_ASSETS_DIR}/styles/${assetFilename}.css`;
-		}}),
-		
+		new MediaQueryPlugin( {
+			include: [ 'main' ],
+			queries: {
+				'screen and (min-width: 375px)': 'xs',
+				'screen and (min-width: 411px)': 'sm',
+				'screen and (min-width: 768px)': 'md',
+			},
+		} ),
 		new BrowserSyncPlugin(
 			// BrowserSync options
 			{
@@ -225,65 +198,64 @@ module.exports = env => {
 					{
 						match: '**/*.js',
 						options: {
-							ignored: [ '**/*.js' ] // ignore all js files, hmr will take care of it
-						}
+							ignored: [ '**/*.js' ], // ignore all js files, hmr will take care of it
+						},
 					},
 					{
 						match: '**/*.sass',
 						options: {
-							ignored: [ '**/*.sass' ] // ignore all sass files, hmr will take care of it
-						}
-					}
+							ignored: [ '**/*.sass' ], // ignore all sass files, hmr will take care of it
+						},
+					},
 				],
-				reloadDelay: 0
-			}, { reload: false }
-		)
+				reloadDelay: 0,
+			},
+			{ reload: false },
+		),
 	];
 
 	// *******
 	// Conditionally inserted
 	// Loaders
 	// *******
-	if ( CssMinimizerPlugin ) {
+	if ( ( CssMinimizerPlugin = null ) ) {
 		// Webpack 5 feature `...` to 'extend' Terser and other minimizers
-		optimizationOptions.minimizer.push( `...`, new CssMinimizerPlugin( {
-			parallel: true,
-			sourceMap: true,
-			minimizerOptions: {
-				preset: [
-					'default',
-					{
-						discardComments: { removeAll: true }
-					}
-				]
-			}
-		} ) );
+		optimizationOptions.minimizer.push(
+			`...`,
+			new CssMinimizerPlugin( {
+				sourceMap,
+				parallel: true,
+				minimizerOptions: {
+					preset: [
+						'default',
+						{
+							discardComments: { removeAll: true },
+						},
+					],
+				},
+			} ),
+		);
 	}
 
 	const postcssLoader = [
 		{
 			loader: 'postcss-loader',
 			options: {
-				sourceMap: isDev,
+				...sourceMap,
 				postcssOptions: {
-					plugins: [
-						'autoprefixer',
-						'postcss-preset-env'
-					]
-				}
-			}
+					plugins: [ 'autoprefixer', 'postcss-preset-env' ],
+				},
+			},
 		},
 		{
 			loader: 'sass-loader',
-			options: sourceMap
-		}
+			options: sourceMap,
+		},
 	];
 	// Add aditional loaders to the rules array
 	styleRules.use.push( ...postcssLoader );
-	localeRules.use.push( ...postcssLoader );
 
 	modules.rules.push( styleRules );
-	modules.rules.push( localeRules );
 
 	// *******
 	// Plugins
@@ -296,10 +268,12 @@ module.exports = env => {
 	}
 
 	if ( SourceMapDevToolPlugin ) {
-		plugins.push( new SourceMapDevToolPlugin( {
-			filename: 'maps/[contenthash][ext].map',
-			exclude: [ 'vendor.js', 'runtime.js' ]
-		} ) );
+		plugins.push(
+			new SourceMapDevToolPlugin( {
+				filename: 'maps/[contenthash][ext].map',
+				exclude: [ 'vendor.js', 'runtime.js' ],
+			} ),
+		);
 	}
 
 	const config = {
@@ -312,7 +286,7 @@ module.exports = env => {
 		watchOptions,
 		module: modules,
 		optimization,
-		plugins
+		plugins,
 	};
 
 	return config;

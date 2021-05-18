@@ -1,6 +1,8 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
+@use 'sass:list'
+@use 'sass:map'
 
 /// Event wrapper
 /// @author Harry Roberts
@@ -11,11 +13,13 @@
 		&,
 		&:hover,
 		&:active,
+		&:focus-visible,
 		&:focus
 			@content
 	@else
 		&:hover,
 		&:active,
+		&:focus-visible,
 		&:focus
 			@content
 
@@ -58,9 +62,14 @@
 
 
 @mixin breakpoint($break, $min: true)
+	$breakpoint: map.get($breakpoints, $break)
+
+	@if not $breakpoint
+		@error 'Breakpoint #{$break} not found. Please add new breakpoint, or call different one.'
+
 	@if $min == true
-		@media screen and ( min-width: $break )
+		@media screen and ( min-width: $breakpoint )
 			@content
 	@else
-		@media screen and ( max-width: $break )
+		@media screen and ( max-width: $breakpoint )
 			@content

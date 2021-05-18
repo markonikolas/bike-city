@@ -14,3 +14,9 @@
 
 # MacOS
 .DS_Store
+
+# logs and reports
+report
+
+# IDE
+.idea/

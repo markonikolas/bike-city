@@ -1,81 +1,63 @@
-import $ from "jquery";
+import './stylesheets/main.sass'
+import $ from 'jquery'
 
-// Styles
-import "./stylesheets/locale/locale_en.sass";
-import "./stylesheets/main.sass";
-
-const on_sr_locale = document.documentElement.getAttribute("lang") === "sr";
-const on_en_locale = document.documentElement.getAttribute("lang") === "en";
-
-$(function () {
+$(() => {
 	function scrollToArticle(e) {
-		e.preventDefault();
-		console.log(e.target)
-		const target = e.target.hash,
-			$target = $(target);
+		e.preventDefault()
+		$('body').removeClass('no-scroll')
+		$('.nav').removeClass('nav--open')
+		$('#menu').removeClass('menu--open')
+		$('#hero').removeClass('hero--active')
+
+		const target = e.target.hash;
+		const $target = $(target);
 
 		const link = e.target.href || null;
 
 		let $amount = $target.offset() || 0;
 
-		if($amount) {
+		if ($amount) {
 			$amount = $amount.top;
 		}
 
-		$("html, body")
+		// Animate scrolling
+		$('html, body')
 			.stop()
-			.animate(
-				{
-					scrollTop: $amount,
-				},
-				500,
-				"swing",
-				function () {
-					window.location.hash = target;
-					console.log(link)
-					if(link) {
-						window.location = link;	
-					}
+			.animate({ scrollTop: $amount }, 500, 'swing', () => {
+				window.location.hash = target;
+				if (link) {
+					window.location = link;
 				}
-			);
+			})
 	}
 
-	$("#menu").on("click", function () {
-		const $nav = $(this).next("nav.header__nav");
-		const $localeIsOpen = $nav.find(".locales-toggle--active");
+	$('#menu').on('click', function () {
+		const $nav = $(this).siblings('.nav')
 
-		// Close locales submenu if opened
-		if ($localeIsOpen.length) {
-			$localeIsOpen
-				.removeClass("locales-toggle--active")
-				.next(".locales")
-				.find(".locales__wrapper")
-				.slideUp();
-		}
-
-		$(".nav__link:not(.locales-toggle)").on("click", function (e) {
-			$(this).closest(".header__nav").slideUp();
-			scrollToArticle(e);
-		});
+		$nav.toggleClass('nav--open')
 
 		// Toggle main navigation
-		$nav.slideToggle();
-	});
+		$(this).toggleClass('menu--open')
 
-	$("#locales-button").on("mousedown", function () {
-		$(this).toggleClass("locales-toggle--down");
-	});
+		// Lock body from scrolling
+		$('body').toggleClass('no-scroll')
+	})
 
-	$("#locales-button").on("mouseup", function () {
+	$('#explore').on('click', (e) => scrollToArticle(e))
+	$('.nav__link').on('click', (e) => scrollToArticle(e))
+
+	$('#footer-date').html(new Date().getFullYear().toString())
+
+	$('.article__button.specs').on('click', function() {
 		const $this = $(this);
+		const $container = $this.closest('.article__buttons').siblings('.article__bullets');
 
-		$this.removeClass("locales-toggle--down");
-		$this.toggleClass("locales-toggle--active");
+		$this.html('Hide Specs');
+		if($container.hasClass('article__bullets--open')) {
+			$this.html('Show Specs');
+			$this.closest('.article__section').find('* > :first-child').css('margin-left', 'auto');
+		}
 
-		setTimeout(function () {
-			$this.next(".locales").find(".locales__wrapper").slideToggle();
-		}, 200);
-	});
-
-	$("#explore").on("click", scrollToArticle);
-});
+		$container.toggleClass('article__bullets--open');
+	})
+})

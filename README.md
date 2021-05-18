@@ -20,11 +20,7 @@ This is my personal school project. The goal is to make a website with basic req
 ### Goal
 
 Since this project main goal is to teach myself and / or practice frontend development --
-usage of code linters, fixers and helpers is *strongly prohibited.* However, since I'm already comfortable
-in any type of frontend development, I will use it as it will make me code faster.
-
-In order to get some benefit from this project, I'm practicing [Markdown](https://www.markdownguide.org),
-[GitHub-Cli](https://cli.github.com), and [Vim](https://www.vim.org).
+usage of code linters, fixers and helpers is *strongly prohibited.* However, I will use it anyway.
 
 ### Requirements
 

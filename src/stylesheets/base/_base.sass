@@ -6,6 +6,15 @@ html
 *::after
 	box-sizing: inherit
 
+body
+	font-family: $text-font-stack
+
+	&.no-scroll
+		overflow: hidden
+
+p
+	margin: 0
+
 a
 	color: $brand-dark
 	text-decoration: none
@@ -13,6 +22,3 @@ a
 	+on-event
 		color: $brand-dark
 		text-decoration: underline
-
-body 
-	font-family: $text-font-stack

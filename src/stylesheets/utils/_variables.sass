@@ -7,6 +7,10 @@
 $text-font-stack: "Cabin", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
 $logo-font-stack: "Squada One", "Arial", sans-serif
 
+/// White
+/// @type Color
+$white: #FFFFFF
+
 /// Dim Gray
 /// @type Color
 $dim-grey: #DEDDDD
@@ -29,20 +33,28 @@ $brand-yellow: #FFE817
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1180px !default
+$site-width: 80rem
 
 /// Headers height
 /// @type Length
-$header-height: 72px
+$header-height: 4.5rem
+$header-height--large: 5.375rem
 
-/// Main vertical padding
-/// @type List
-$body-padding: 20px 40px
+/// Main body padding
+/// @type Length
+$v-padding: 2.5rem
+$h-padding: 1.5em
+$body-padding: $h-padding $v-padding
+
+/// Screen height
+/// @type Length
+$screen-height: 100vh
+$screen-height--no-header: calc(#{$screen-height} - #{$header-height})
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) !default
+/// @prop {Map} values - Values are actual breakpoints expressed in ems
+$breakpoints: ("small": 23.4375em, "regular": 36em, "medium": 48em, "large": 64em, 'max': 160em) !default
 
 /// Relative or absolute URL where all assets are served from
 /// @type String

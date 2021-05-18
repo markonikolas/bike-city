@@ -1,28 +1,48 @@
+@use 'sass:math'
+
 .menu
-	width: 40px
-	height: 25px
-	border-radius: 5px
-	position: relative
+	$scale: 0.3125rem
+
+	box-sizing: content-box
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	width: 2.5rem
+	height: 1.5rem
+	padding: $scale
+	margin-right: calc(-0.1rem - #{$scale})
+	transform: scale(0.8)
 	cursor: pointer
+	@extend %default-transition
+	+on-event
+		outline: none
 
-	&__line
-		position: absolute
+	@include breakpoint(large)
+		display: none
 
-		&,
-		&::before,
-		&::after
-			display: block
-			content: ''
-			position: absolute
-			height: 5px
-			width: 100%
-			background: $brand-dark
-			left: 0
-			border-radius: 5px
-			background: #FFF
+	&::before,
+	&::after
+		content: ''
+		height: $scale
+		background-color: $white
+		border-radius: $scale
+
+	&:focus::before,
+	&:focus::after
+		background-color: $brand-yellow
+
+	&--open
+		$rotation: -45deg
+		$origin: right
+		$translate: 0.3125rem
+		height: 2rem
+
+		@extend %fadein
 
 		&::before
-			top: 10px
+			transform-origin: top $origin
+			transform: rotate($rotation) translate(-$translate, -$translate)
 
 		&::after
-			top: 20px
+			transform-origin: bottom $origin
+			transform: rotate(-$rotation) translate(-$translate, $translate)

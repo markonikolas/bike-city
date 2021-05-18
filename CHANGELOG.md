@@ -1,6 +1,34 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2021-04-18
+### Changed
+- Update contact layout responsiveness
+- Update about layout responsiveness
+- Update blog layout responsiveness
+- Update shop layout responsiveness
+- Update footer markup
+- Update hero responsiveness
+- Update pixel units with dynamic values
+- Update links to be usable on keyboard
+- Update asset generation
+- Update nav menu
+- Improve hamburger menu
+- Remove unnecessary stylesheets
+- Update asset export with csspurge
+- Update gitignore
+
+### Fix
+- Fix webpack not exporting assets
+
+### Removed
+- Remove locales
+
+### Added
+- Add gif support in webpack configuration
+- Add button for toggling product specifications
+- Add new breakpoints
+
 ## [2.0.2] - 21-04-06
 ### Fixed
 - Fix rwd issues

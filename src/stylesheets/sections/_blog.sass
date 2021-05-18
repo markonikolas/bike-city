@@ -1,39 +1,52 @@
 .blog
 
 	.article
+
 		&__section
 			height: unset
-			padding-bottom: 60px
+			padding: 0 0 $h-padding * 2.5
+			flex-direction: column
+
 
 		&__image
-			width: 120vw
-			clip-path: polygon(0 0%, 100% 6%, 100% 87%, 0% 98%) 
-			margin-top: -25px
+			clip-path: polygon(0px 0%, 100.00% -0.17%, 100% 87%, 0% 98%)
 
 		&__heading
-			margin-top: unset
-			font-size: 32px
-
-			@include breakpoint(375px)
-				font-size: 42px !important
-				margin-bottom: 30px
+			margin: 0.5em 0
+			font-size: 2rem
+			padding: 0 $v-padding
 
 		&__text
-			@include breakpoint(375px)
-				font-size: 16px
-				line-height: 1.618
+			padding: 0 $v-padding
+			text-align: left
+			flex: 1
 
+			@include breakpoint(small)
+				font-size: 0.9rem
+				line-height: 1.618
+	.wrapper
+		padding: 0
+		display: grid
+		gap: 2em
+
+		@include breakpoint(regular)
+			padding: $body-padding
+
+		@include breakpoint(medium)
+			grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+			margin: 0 auto
+			max-width: $site-width
 
 	.emphasis
 		color: $brand-dark
 		font-weight: bold
+		font-size: 1rem
 		text-decoration: underline
-		
-	.image-wrapper
-		height: 280px
+		margin: 0
+		padding: 0.25em
 
-		@include breakpoint(411px)
-			margin-bottom: 50px
+	.image-wrapper
+		width: 100%
 
 		&::after
 			display: none
