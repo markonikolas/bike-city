@@ -2,38 +2,16 @@
 
 	.wrapper
 		@extend %max-site-width
+		overflow: hidden
 		padding: 0
 		margin: 0 auto
 
-		@include breakpoint(medium)
-			padding: 0 $v-padding
-
-		@include breakpoint(large)
+		@include breakpoint(regular)
 			display: grid
 			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
 			gap: 2em
-			padding: 1.5em 2.5rem
-
-	.article
-
-		@include breakpoint(medium)
-			font-size: 2rem
+			padding: $body-padding
 
 		@include breakpoint(large)
-			font-size: 1.5rem
-			width: 110%
+			padding: 1.5em 2.5rem
 
-		&__section
-			@include breakpoint(large)
-				padding-bottom: 0
-
-		&__heading
-			@include breakpoint(small)
-				font-size: 3.85rem
-
-		&__image
-			top: 4.5em
-
-		&__button
-			bottom: 2em
-			margin-right: 0.5em

@@ -9,24 +9,24 @@ $(() => {
 		$('#menu').removeClass('menu--open')
 		$('#hero').removeClass('hero--active')
 
-		const target = e.target.hash
-		const $target = $(target)
+		const target = e.target.hash;
+		const $target = $(target);
 
-		const link = e.target.href || null
+		const link = e.target.href || null;
 
-		let $amount = $target.offset() || 0
+		let $amount = $target.offset() || 0;
 
 		if ($amount) {
-			$amount = $amount.top
+			$amount = $amount.top;
 		}
 
 		// Animate scrolling
 		$('html, body')
 			.stop()
 			.animate({ scrollTop: $amount }, 500, 'swing', () => {
-				window.location.hash = target
+				window.location.hash = target;
 				if (link) {
-					window.location = link
+					window.location = link;
 				}
 			})
 	}
@@ -45,17 +45,17 @@ $(() => {
 
 	$('#explore').on('click', (e) => scrollToArticle(e))
 	$('.nav__link').on('click', (e) => scrollToArticle(e))
-	$('#size').on('click', (e) => scrollToArticle(e))
 
 	$('#footer-date').html(new Date().getFullYear().toString())
 
 	$('.article__button.specs').on('click', function() {
 		const $this = $(this);
-		const $container = $this.siblings('.article__bullets');
+		const $container = $this.closest('.article__buttons').siblings('.article__bullets');
 
 		$this.html('Hide Specs');
 		if($container.hasClass('article__bullets--open')) {
 			$this.html('Show Specs');
+			$this.closest('.article__section').find('* > :first-child').css('margin-left', 'auto');
 		}
 
 		$container.toggleClass('article__bullets--open');

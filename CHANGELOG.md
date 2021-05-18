@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update about layout responsivness
 - Update blog layout responsivness
 - Update shop layout responsivness
 - Update footer markup

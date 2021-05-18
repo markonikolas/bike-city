@@ -23,12 +23,10 @@
 		width: 100%
 		padding-top: 2em
 		padding-bottom: 1.25em
-		margin-bottom: 2.5em
 		min-height: 25rem
 		overflow: hidden
 		color: $mid-grey
 		background-color: $dim-grey
-		box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25)
 		clip-path: polygon(0 2%, 100% 0, 100% 95%, 0% 98%)
 
 	&__heading
@@ -43,14 +41,7 @@
 			line-height: 5rem
 			color: lighten($mid-grey, 60%)
 
-		&--last
-			font-size: 3.125rem
-			line-height: 0.95
-
-		&--small
-			font-size: 1.5rem
-			line-height: 1.75rem
-			margin-top: 2em
+		&--grey
 
 			@include breakpoint(small)
 				color: $mid-grey
@@ -73,11 +64,7 @@
 			word-wrap: break-word
 
 	&__image
-		@extend %center-x
 		width: 100%
-
-		@include breakpoint(large)
-			width: unset
 
 	&__bullets
 		opacity: 0
@@ -88,11 +75,33 @@
 			opacity: 1
 
 	&__text
+		$default-size: 0.775rem
+		$default-line-height: 1.25rem
+		flex: 1 0 100%
 		font-weight: 400
-		line-height: 1.25rem
-		font-size: 0.775rem
+		line-height: $default-line-height
+		font-size: $default-size
 		margin-left: auto
 		text-align: right
+
+		@include breakpoint(regular)
+			font-size: 0.85rem
+			line-height: 2
+
+		@include breakpoint(large)
+			font-size: $default-size
+			line-height: $default-line-height
+
+	&__buttons
+		display: flex
+		align-items: baseline
+		position: absolute
+		bottom: 2.4rem
+		gap: 1em
+
+		@include breakpoint(small)
+			right: 1.4em
+			bottom: 3.4em
 
 	&__button
 		background: $brand-yellow
@@ -100,9 +109,7 @@
 		border: none
 		position: relative
 		left: 0
-		bottom: 3.125em
 		z-index: 2
-		width: 5.3em
 		height: 2.2em
 		text-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.25)
 		font-weight: bold
@@ -118,12 +125,12 @@
 			background: $brand-dark
 			color: $brand-yellow
 
-		&--wide
-			width: 8.25em
-			margin-top: 0.5em
+		&:first-child
+			bottom: -0.33em
 
 		&--light
 			background-color: $dim-grey
+			width: 142px
 
 			&:hover
 				background: $white
