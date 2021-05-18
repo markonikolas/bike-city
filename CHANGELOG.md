@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Update
+- Update sr template
+
 ## [2.1.1] - 2021-04-18
 ### Fixed
 - Fix Changelog typos
