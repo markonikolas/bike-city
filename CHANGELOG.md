@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update buttons for multiple languages
 - Update sr template
 
 ### Added
