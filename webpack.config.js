@@ -100,7 +100,7 @@ module.exports = env => {
 				},
 			},
 			{
-				test: /\.(png|jpe?g|webp)$/i,
+				test: /\.(png|jpe?g|webp|gif)$/i,
 				loader: 'url-loader',
 				options: {
 					name: `${BUILD_ASSETS_DIR}/images/${assetFilename}.[ext]`,
