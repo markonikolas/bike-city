@@ -60,4 +60,10 @@ $(() => {
 
 		$container.toggleClass('article__bullets--open');
 	})
+
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('body').removeClass('loading')
+		}, 150)
+	})
 })
