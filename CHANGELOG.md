@@ -3,12 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
-- Update contact layout responsivness
-- Update about layout responsivness
-- Update blog layout responsivness
-- Update shop layout responsivness
+- Update contact layout responsiveness
+- Update about layout responsiveness
+- Update blog layout responsiveness
+- Update shop layout responsiveness
 - Update footer markup
-- Update hero responsivness
+- Update hero responsiveness
 - Update pixel units with dynamic values
 - Update links to be usable on keyboard
 - Update asset generation
