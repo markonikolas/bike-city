@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Add language switcher
 
+### Fix
+- Fix loading stutter
+
 ## [2.1.1] - 2021-04-18
 ### Fixed
 - Fix Changelog typos
