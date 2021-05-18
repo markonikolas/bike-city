@@ -16,13 +16,15 @@ All notable changes to this project will be documented in this file.
 - Remove unnecessary stylesheets
 - Update asset export with csspurge
 - Update gitignore
+
+### Fix
 - Fix webpack not exporting assets
 
 ### Removed
-- Removed locales
+- Remove locales
 
 ### Added
-- Added button for toggling product specifications
+- Add button for toggling product specifications
 - Add new breakpoints
 
 ## [2.0.2] - 21-04-06
