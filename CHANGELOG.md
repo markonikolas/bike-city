@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ### Update
 - Update sr template
 
+### Add
+- Add language switcher
+
 ## [2.1.1] - 2021-04-18
 ### Fixed
 - Fix Changelog typos
