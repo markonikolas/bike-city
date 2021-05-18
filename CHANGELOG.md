@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update contact layout responsivness
 - Update about layout responsivness
 - Update blog layout responsivness
 - Update shop layout responsivness
@@ -24,6 +25,7 @@ All notable changes to this project will be documented in this file.
 - Remove locales
 
 ### Added
+- Add gif support in webpack configuration
 - Add button for toggling product specifications
 - Add new breakpoints
 
