@@ -187,25 +187,25 @@
 
 		<article class="article contact" id="contact">
 			<h2 class="article__title">Contact</h2>
-			<section class="article__section">
-				<div class="article__animation">
-						<iframe  src="https://imgflip.com/embed/5a1h6c" frameborder='0'></iframe>
-				</div>
-				<h3 class="article__heading article__heading--small">Having some trouble?<em class="emphasis">everything.</em></h3>
-				<h4 class="article__subheading">We’re here to help!</h4>
-				<div class="article__text">
-					<p>You can’t be the best if you dont ask questions! We reply to everyone.</p>
-				</div>
-				<form action="" class="form" method="POST">
-					<label for="name">Name</label>
-					<input class="form__input" id="name" placeholder="name" type="text" />
-					<label for="email">Email</label>
-					<input class="form__input" id="email" placeholder="email *" required type="email" />
-					<label for="message">Message</label>
-					<input class="form__input form__textarea" id="message" placeholder="message *" required type="text" />
-					<input class="form__button" type="submit" value="Submit" />
-				</form>
-			</section>
+			<div class='wrapper'>
+				<section class='article__section'>
+					<div class="article__animation">
+						<img class="article__having-some-trouble" src=<%=require('/src/assets/images/joey-in-trouble.gif').default %> alt='Joey: Having some
+						                                                                                                        trouble?'>
+					</div>
+					<h3 class="article__heading article__heading--small"><em class="emphasis">Let's talk.</em></h3>
+
+					<form action="" class="form" method="POST">
+						<label for="name">Name</label>
+						<input class="form__input" id="name" placeholder="name" type="text" />
+						<label for="email">Email</label>
+						<input class="form__input" id="email" placeholder="email *" required type="email" />
+						<label for="message">Message</label>
+						<input class="form__input form__textarea" id="message" placeholder="message *" required type="text" />
+						<input class="form__button" type="submit" value="Submit" />
+					</form>
+				</section>
+			</div>
 		</article>
 
 		<footer class="footer">
