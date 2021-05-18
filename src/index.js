@@ -52,12 +52,28 @@ $(() => {
 		const $this = $(this);
 		const $container = $this.closest('.article__buttons').siblings('.article__bullets');
 
-		$this.html('Hide Specs');
+		if($('html').attr('lang')== 'en') {
+			$this.html('Hide Specs');
+		} else {
+			$this.html('Sakrij');
+		}
+
 		if($container.hasClass('article__bullets--open')) {
-			$this.html('Show Specs');
+			if($('html').attr('lang') == 'en') {
+				$this.html('Show Specs');
+			} else {
+				$this.html('Prikaži više')
+			}
+
 			$this.closest('.article__section').find('* > :first-child').css('margin-left', 'auto');
 		}
 
 		$container.toggleClass('article__bullets--open');
+	})
+
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('body').removeClass('loading')
+		}, 150)
 	})
 })

@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2021-05-19
+### Changed
+- Update buttons for multiple languages
+- Update sr template
+
+### Added
+- Add language switcher
+
+### Fixed
+- Fix loading stutter
+
 ## [2.1.1] - 2021-04-18
 ### Fixed
 - Fix Changelog typos
@@ -22,7 +33,7 @@ All notable changes to this project will be documented in this file.
 - Update asset export with csspurge
 - Update gitignore
 
-### Fix
+### Fixed
 - Fix webpack not exporting assets
 
 ### Removed
