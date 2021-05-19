@@ -1,14 +1,20 @@
+// First font is subset and inlined, others are loaded when class is applied to the body.
 @font-face
-	font-family: Cabin
-	src: url('/src/assets/fonts/Cabin/Cabin-Regular.ttf')
+	font-family: CabinSubset
+	src: url('/src/assets/fonts/Cabin/Cabin-Regular.woff2') format('woff2')
 	font-weight: 400
 
 @font-face
 	font-family: Cabin
-	src: url('/src/assets/fonts/Cabin/Cabin-Bold.ttf')
+	src: url('/src/assets/fonts/Cabin/Cabin-Regular.woff2') format('woff2')
+	font-weight: 400
+
+@font-face
+	font-family: Cabin
+	src: url('/src/assets/fonts/Cabin/Cabin-Bold.woff2') format('woff2')
 	font-weight: 700
 
 @font-face
-	font-family: 'Squada One'
-	src: url('/src/assets/fonts/Squada_One/SquadaOne-Regular.ttf')
+	font-family: SquadaOne
+	src: url('/src/assets/fonts/Squada_One/SquadaOne-Regular.woff2') format('woff2')
 	font-weight: 700

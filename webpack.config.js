@@ -98,17 +98,17 @@ module.exports = ( { analyze, production, watch } ) => {
 					name: `${assetFilename}.[ext]`,
 					outputPath: 'static/fonts',
 					publicPath: '../fonts/',
-					limit: isWatching,
+					limit: false,
 				},
 			},
 			{
-				test: /\w+\[Subset].woff2$/i,
+				test: /\w+[Subset].woff2/i,
 				loader: 'url-loader',
 				options: {
 					name: `${assetFilename}.[ext]`,
 					outputPath: 'static/fonts',
 					publicPath: '../fonts/',
-					limit: 0,
+					limit: false,
 				},
 			},
 			{

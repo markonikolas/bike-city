@@ -2,6 +2,31 @@ import './stylesheets/main.sass';
 import $ from 'jquery';
 
 $( () => {
+	// Web font load
+	if ( 'fonts' in document ) {
+		// Optimization for Repeat Views
+		if ( sessionStorage.fontsLoadedCriticalFoftDataUri ) {
+			document.documentElement.className += ' fonts-loaded-2';
+			return;
+		}
+
+		document.fonts.load( '1em CabinSubset' ).then( () => {
+			document.documentElement.className += ' fonts-loaded-1';
+
+			Promise.all( [
+				document.fonts.load( '400 1em Cabin' ),
+				document.fonts.load( '700 1em Cabin' ),
+				document.fonts.load( '700 1em SquadOne' ),
+			] ).then( () => {
+				document.documentElement.className += ' fonts-loaded-2';
+
+				// Optimization for Repeat Views
+				sessionStorage.fontsLoadedCriticalFoftDataUri = true;
+			} );
+		} );
+	}
+
+	// Scrolling behavior
 	const scrollToArticle = e => {
 		e.preventDefault();
 		$( 'body' ).removeClass( 'no-scroll' );
@@ -30,6 +55,7 @@ $( () => {
 			} );
 	};
 
+	// Menu button toggle
 	$( '#menu' ).on( 'click', function () {
 		const $nav = $( this ).siblings( '.nav' );
 
@@ -42,11 +68,11 @@ $( () => {
 		$( 'body' ).toggleClass( 'no-scroll' );
 	} );
 
+	// Explore and other button behavior
 	$( '#explore' ).on( 'click', e => scrollToArticle( e ) );
 	$( '.nav__link' ).on( 'click', e => scrollToArticle( e ) );
 
-	$( '#footer-date' ).html( new Date().getFullYear().toString() );
-
+	// Show more button toggle
 	$( '.article__button.specs' ).on( 'click', function () {
 		const $this = $( this );
 		const $container = $this.closest( '.article__buttons' ).siblings( '.article__bullets' );
@@ -69,4 +95,7 @@ $( () => {
 
 		$container.toggleClass( 'article__bullets--open' );
 	} );
+
+	// Footer auto date generation
+	$( '#footer-date' ).html( new Date().getFullYear().toString() );
 } );
