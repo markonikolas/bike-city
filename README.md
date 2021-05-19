@@ -17,11 +17,6 @@ This is my personal school project. The goal is to make a website with basic req
 
 ---
 
-### Goal
-
-Since this project main goal is to teach myself and / or practice frontend development --
-usage of code linters, fixers and helpers is *strongly prohibited.* However, I will use it anyway.
-
 ### Requirements
 
 - Visual identity ( logo )
@@ -61,12 +56,8 @@ usage of code linters, fixers and helpers is *strongly prohibited.* However, I w
 
 | Bonus | Points |
 | ----- | ------ |
-| Estethics | 1 |
+| Aestethics | 1 |
 | JS / Jqery / WebGL | 1 |
 
 #### In the real world, this readme wouldn't contain this information
 ##### I just needed some content to put in this readme
-
-###### Tux says Hello
-
-![Tux, the Liinux mascot](https://d33wubrfki0l68.cloudfront.net/e7ed9fe4bafe46e275c807d63591f85f9ab246ba/e2d28/assets/images/tux.png)
