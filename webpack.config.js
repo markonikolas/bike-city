@@ -100,6 +100,16 @@ module.exports = env => {
 				},
 			},
 			{
+				test: /\w+\[Subset].woff2$/i,
+				loader: 'url-loader',
+				options: {
+					name: `${assetFilename}.[ext]`,
+					outputPath: 'static/fonts',
+					publicPath: '../fonts/',
+					limit: 0,
+				},
+			},
+			{
 				test: /\.(png|jpe?g|webp|gif)$/i,
 				loader: 'url-loader',
 				options: {
@@ -218,7 +228,7 @@ module.exports = env => {
 	// Conditionally inserted
 	// Loaders
 	// *******
-	if ( ( CssMinimizerPlugin = null ) ) {
+	if ( CssMinimizerPlugin = null ) {
 		// Webpack 5 feature `...` to 'extend' Terser and other minimizers
 		optimizationOptions.minimizer.push(
 			`...`,

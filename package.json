@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --env development --env watch",
     "build:dev": "webpack --progress --env development",
-    "build:prod": "webpack --progress --env production && node csspurge.js",
+    "build:prod": "webpack --progress && node csspurge.js",
     "analyze:dev": "webpack --env development --env analyze",
     "analyze:prod": "webpack --env production --env analyze"
   },
@@ -41,7 +41,6 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.4.0",
     "file-loader": "^6.2.0",
-    "glyphhanger": "^4.0.1",
     "html-webpack-plugin": "^5.2.0",
     "image-webpack-loader": "^7.0.1",
     "media-query-plugin": "^1.5.0",
