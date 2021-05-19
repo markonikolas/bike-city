@@ -1,9 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
-### Added
-- Add [Glyphhanger](https://www.npmjs.com/package/glyphhanger)
+## [2.3.0] - 2021-05-19
+### Update
+- Clean up codebase
+- Optimize web font load
+
+### Removed
+- Unnecessary libraries
+- Unnecessary fonts
 
 ## [2.2.1] - 2021-05-19
 ### Fixed
