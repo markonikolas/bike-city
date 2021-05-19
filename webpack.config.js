@@ -1,10 +1,12 @@
-module.exports = env => {
+// noinspection ConditionalExpressionJS
+
+module.exports = ( { analyze, production, watch } ) => {
 	const path = require( 'path' );
 
 	// Env
-	const isDev = !env.production;
-	const isWatching = !!env.watch;
-	const isAnalyze = !!env.analyze;
+	const isDev = !production;
+	const isWatching = !!watch;
+	const isAnalyze = !!analyze;
 
 	// Helpers
 	const Ternary = require( './helper/Ternary' );
@@ -144,7 +146,7 @@ module.exports = env => {
 			},
 		},
 		minimize: !isDev,
-		minimizer: !isDev ? [ `...` ] : [],
+		minimizer: isDev ? [] : [ `...` ],
 	};
 
 	// Loader Rules
