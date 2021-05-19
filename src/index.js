@@ -30,7 +30,7 @@ $( () => {
 			} );
 	};
 
-	$( '#menu' ).on( 'click', () => {
+	$( '#menu' ).on( 'click', function () {
 		const $nav = $( this ).siblings( '.nav' );
 
 		$nav.toggleClass( 'nav--open' );
@@ -47,7 +47,7 @@ $( () => {
 
 	$( '#footer-date' ).html( new Date().getFullYear().toString() );
 
-	$( '.article__button.specs' ).on( 'click', () => {
+	$( '.article__button.specs' ).on( 'click', function () {
 		const $this = $( this );
 		const $container = $this.closest( '.article__buttons' ).siblings( '.article__bullets' );
 		const onEnPage = $( 'html' ).attr( 'lang' ) === 'en';
@@ -68,11 +68,5 @@ $( () => {
 		}
 
 		$container.toggleClass( 'article__bullets--open' );
-	} );
-
-	$( document ).ready( () => {
-		setTimeout( () => {
-			$( 'body' ).removeClass( 'loading' );
-		}, 100 );
 	} );
 } );
