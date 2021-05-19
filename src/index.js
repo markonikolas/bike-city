@@ -1,79 +1,78 @@
-import './stylesheets/main.sass'
-import $ from 'jquery'
+import './stylesheets/main.sass';
+import $ from 'jquery';
 
-$(() => {
-	function scrollToArticle(e) {
-		e.preventDefault()
-		$('body').removeClass('no-scroll')
-		$('.nav').removeClass('nav--open')
-		$('#menu').removeClass('menu--open')
-		$('#hero').removeClass('hero--active')
+$( () => {
+	const scrollToArticle = e => {
+		e.preventDefault();
+		$( 'body' ).removeClass( 'no-scroll' );
+		$( '.nav' ).removeClass( 'nav--open' );
+		$( '#menu' ).removeClass( 'menu--open' );
+		$( '#hero' ).removeClass( 'hero--active' );
 
 		const target = e.target.hash;
-		const $target = $(target);
-
+		const $target = $( target );
 		const link = e.target.href || null;
 
 		let $amount = $target.offset() || 0;
 
-		if ($amount) {
+		if ( $amount ) {
 			$amount = $amount.top;
 		}
 
 		// Animate scrolling
-		$('html, body')
+		$( 'html, body' )
 			.stop()
-			.animate({ scrollTop: $amount }, 500, 'swing', () => {
+			.animate( { scrollTop: $amount }, 500, 'swing', () => {
 				window.location.hash = target;
-				if (link) {
+				if ( link ) {
 					window.location = link;
 				}
-			})
-	}
+			} );
+	};
 
-	$('#menu').on('click', function () {
-		const $nav = $(this).siblings('.nav')
+	$( '#menu' ).on( 'click', () => {
+		const $nav = $( this ).siblings( '.nav' );
 
-		$nav.toggleClass('nav--open')
+		$nav.toggleClass( 'nav--open' );
 
 		// Toggle main navigation
-		$(this).toggleClass('menu--open')
+		$( this ).toggleClass( 'menu--open' );
 
 		// Lock body from scrolling
-		$('body').toggleClass('no-scroll')
-	})
+		$( 'body' ).toggleClass( 'no-scroll' );
+	} );
 
-	$('#explore').on('click', (e) => scrollToArticle(e))
-	$('.nav__link').on('click', (e) => scrollToArticle(e))
+	$( '#explore' ).on( 'click', e => scrollToArticle( e ) );
+	$( '.nav__link' ).on( 'click', e => scrollToArticle( e ) );
 
-	$('#footer-date').html(new Date().getFullYear().toString())
+	$( '#footer-date' ).html( new Date().getFullYear().toString() );
 
-	$('.article__button.specs').on('click', function() {
-		const $this = $(this);
-		const $container = $this.closest('.article__buttons').siblings('.article__bullets');
-
-		if($('html').attr('lang')== 'en') {
-			$this.html('Hide Specs');
+	$( '.article__button.specs' ).on( 'click', () => {
+		const $this = $( this );
+		const $container = $this.closest( '.article__buttons' ).siblings( '.article__bullets' );
+		const onEnPage = $( 'html' ).attr( 'lang' ) === 'en';
+		if ( onEnPage ) {
+			$this.html( 'Hide Specs' );
 		} else {
-			$this.html('Sakrij');
+			$this.html( 'Sakrij' );
 		}
 
-		if($container.hasClass('article__bullets--open')) {
-			if($('html').attr('lang') == 'en') {
-				$this.html('Show Specs');
+		if ( $container.hasClass( 'article__bullets--open' ) ) {
+			if ( onEnPage ) {
+				$this.html( 'Show Specs' );
 			} else {
-				$this.html('Prikaži više')
+				$this.html( 'Prikaži više' );
 			}
 
-			$this.closest('.article__section').find('* > :first-child').css('margin-left', 'auto');
+			$this.closest( '.article__section' ).find( '* > :first-child' ).css( 'margin-left', 'auto' );
 		}
 
-		$container.toggleClass('article__bullets--open');
-	})
+		$container.toggleClass( 'article__bullets--open' );
+	} );
 
-	$(document).ready(function() {
-		setTimeout(function() {
-			$('body').removeClass('loading')
-		}, 150)
-	})
-})
+	$( document ).ready( () => {
+		setTimeout( () => {
+			$( 'body' ).removeClass( 'loading' );
+		}, 100 );
+	} );
+} );
