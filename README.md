@@ -51,13 +51,13 @@ This is my personal school project. The goal is to make a website with basic req
 | --------- | -------- |
 | HTML / CSS    |  20  |
 | Functionality |   5  |
-| Responsivness |   5  |
+| Responsiveness |   5  |
 | Presentation  |  10  |
 
 | Bonus | Points |
 | ----- | ------ |
-| Aestethics | 1 |
-| JS / Jqery / WebGL | 1 |
+| Aesthethics | 1 |
+| JS / Jquery / WebGL | 1 |
 
 #### In the real world, this readme wouldn't contain this information
 ##### I just needed some content to put in this readme
