@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Update
+- Assets generation for production
+
+### Added
+- Add manual
+
 ## [2.3.0] - 2021-05-19
 ### Update
 - Clean up codebase
