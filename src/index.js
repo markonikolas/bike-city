@@ -1,7 +1,7 @@
 import './stylesheets/main.sass';
 import $ from 'jquery';
 
-$( () => {
+$( document ).ready( () => {
 	// Web font load
 	if ( 'fonts' in document ) {
 		// Optimization for Repeat Views
