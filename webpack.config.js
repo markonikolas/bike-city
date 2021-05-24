@@ -37,6 +37,7 @@ module.exports = ( { analyze, production, watch } ) => {
 	const { WebpackManifestPlugin } = !isDev && require( 'webpack-manifest-plugin' );
 
 	const MediaQueryPlugin = require( 'media-query-plugin' );
+
 	// Config
 	const mode = inDevMode.check( 'development', 'production' );
 
@@ -50,10 +51,12 @@ module.exports = ( { analyze, production, watch } ) => {
 		chunkFilename: inDevMode.check( 'static/scripts/[name]', 'static/scripts/[contenthash].js' ),
 		publicPath: '',
 	};
+
 	const devServer = {
 		contentBase: path.join( __dirname, BUILD_DIR ),
 		compress: true,
 		hot: true,
+		open: false,
 		watchContentBase: true,
 	};
 	const watchOptions = {
@@ -61,7 +64,6 @@ module.exports = ( { analyze, production, watch } ) => {
 		aggregateTimeout: 0,
 		poll: 0,
 	};
-
 	const sourceMap = {
 		sourceMap: false,
 	};
@@ -215,7 +217,7 @@ module.exports = ( { analyze, production, watch } ) => {
 				host: 'localhost',
 				port: 8000,
 				proxy: 'http://localhost:8080/',
-
+				open: false,
 				files: [
 					'**/*-template.html', // reload on html change
 					{
