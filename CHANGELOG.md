@@ -2,14 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-### Update
+### Changed
 - Assets generation for production
 
 ### Added
 - Add manual
 
 ## [2.3.0] - 2021-05-19
-### Update
+### Changed
 - Clean up codebase
 - Optimize web font load
 
