@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Changed
+- Update webpack to reload on configuration on save
 - Assets generation for production
 
 ### Added
