@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Add manual
 
+### Removed
+- Remove css purge 
+
 ## [2.3.0] - 2021-05-19
 ### Changed
 - Clean up codebase
