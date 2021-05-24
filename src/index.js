@@ -1,31 +1,34 @@
 import './stylesheets/main.sass';
 import $ from 'jquery';
 
-$( document ).ready( () => {
+( function webfonts( document ) {
+	const doc = document;
 	// Web font load
-	if ( 'fonts' in document ) {
+	if ( 'fonts' in doc ) {
 		// Optimization for Repeat Views
 		if ( sessionStorage.fontsLoadedCriticalFoftDataUri ) {
-			document.documentElement.className += ' fonts-loaded-2';
+			doc.documentElement.className += ' fonts-loaded-2';
 			return;
 		}
 
-		document.fonts.load( '1em CabinSubset' ).then( () => {
-			document.documentElement.className += ' fonts-loaded-1';
+		doc.fonts.load( '1em CabinSubset' ).then( () => {
+			doc.documentElement.className += ' fonts-loaded-1';
 
 			Promise.all( [
-				document.fonts.load( '400 1em Cabin' ),
-				document.fonts.load( '700 1em Cabin' ),
-				document.fonts.load( '700 1em SquadOne' ),
+				doc.fonts.load( '400 1em Cabin' ),
+				doc.fonts.load( '700 1em Cabin' ),
+				doc.fonts.load( '700 1em SquadOne' ),
 			] ).then( () => {
-				document.documentElement.className += ' fonts-loaded-2';
+				doc.documentElement.className += ' fonts-loaded-2';
 
 				// Optimization for Repeat Views
 				sessionStorage.fontsLoadedCriticalFoftDataUri = true;
 			} );
 		} );
 	}
+}( document ) );
 
+$( document ).ready( () => {
 	// Scrolling behavior
 	const scrollToArticle = e => {
 		e.preventDefault();

@@ -80,8 +80,10 @@ module.exports = ( { analyze, production, watch } ) => {
 				test: /\.svg$/i,
 				loader: 'url-loader',
 				options: {
-					name: `${BUILD_ASSETS_DIR}/icons/${assetFilename}.[ext]`,
+					name: `${assetFilename}.[ext]`,
 					limit: inWatchMode.check( 10240, false ),
+					outputPath: 'static/icons',
+					publicPath: '../icons',
 				},
 			},
 			{
@@ -114,17 +116,7 @@ module.exports = ( { analyze, production, watch } ) => {
 				},
 			},
 			{
-				test: /background-\w+.(png|jpe?g|webp|gif)$/i,
-				loader: 'url-loader',
-				options: {
-					name: `${assetFilename}.[ext]`,
-					limit: inWatchMode.check( 10240, false ),
-					outputPath: 'images',
-					publicPath: '../images',
-				},
-			},
-			{
-				test: /\.(png|jpe?g|webp|gif)$/i,
+				test: /.(png|jpe?g|webp|gif)$/i,
 				loader: 'url-loader',
 				options: {
 					name: `${assetFilename}.[ext]`,
@@ -243,7 +235,9 @@ module.exports = ( { analyze, production, watch } ) => {
 	// Conditionally inserted
 	// Loaders
 	// *******
-	if ( CssMinimizerPlugin = null ) {
+	let CssMinimizerPlugin;
+
+	if ( CssMinimizerPlugin ) {
 		// Webpack 5 feature `...` to 'extend' Terser and other minimizers
 		optimizationOptions.minimizer.push(
 			`...`,
@@ -277,7 +271,7 @@ module.exports = ( { analyze, production, watch } ) => {
 			options: sourceMap,
 		},
 	];
-	// Add aditional loaders to the rules array
+	// Add additional loaders to the rules array
 	styleRules.use.push( ...postcssLoader );
 
 	modules.rules.push( styleRules );
